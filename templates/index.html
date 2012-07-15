@@ -3,23 +3,35 @@
 {% block title %}Lightning{% endblock %}
 {% block meta_description %}{% endblock %}
 
-{% block extra_head %}{% endblock %}
+{% block extra_head %}
+
+<script type="text/javascript">
+    $(function() {          
+        $("img").lazyload();
+
+      });
+    
+</script>
+
+{% endblock %}
 
 {% block content %}
 
-<div class = "ten columns">
-
-   <h3>I'm looking for a photographer who specializes in </h3>
-    <form action="{% url reg2 %}" method="post">{% csrf_token %}
-        
-        <select name="tags">
+<<<<<<< HEAD
+<div class = "search-container ten columns">
+         
+   <h3 class ="white">I'm looking for a photographer who specializes in </h3>
+    <form action="{% url reg2 %}" method="post" id="reg1">{% csrf_token %} 
+     
+    
+    <select name="tags">
 			<option selected="selected">anything</option>
 			<option>portraits</option>
 			<option>weddings</option>
 			<option>editorial</option>
 		</select>
 
-        <h3>near</h3>
+        <h3 class="white">near</h3>
        	
         <select name="city">
 			<option selected="selected">San Francisco</option>
@@ -33,16 +45,18 @@
 
 </div>
 
-<div id="gallery">
+
+
+<div class="gallery">
 
 {% for user in users %}
      <div class="photo-thumb">
+       <div class="name">{{ user.fullname }}</div></li>
           <a href="/{{ user.username }}"><img src="{{ user.pics.0.image_url }}" /></a>
-          <div class="name">{{ user.fullname }}</div></li>
      </div>
 {% endfor %}
 
-</div>
+</div> 
 
 <script type="text/x-handlebars-templtae" id="photo-thumb-template">
      <div class="photo-thumb">
