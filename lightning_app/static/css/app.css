@@ -213,7 +213,10 @@ body {
 
 
 form#reg2 #profilepic {
-    width: 250px;
+    height: 280px;
+    padding: 10px 10px 50px 10px;
+    background-color: white;
+    border: 1px solid #AFAFAF;
 }
 
 label.checkbox {
@@ -264,6 +267,9 @@ label.checkbox:hover span.checkbox {
 
 .registration {
     margin-top: 50px !important;
+}
+
+.white {
     color: white;
 }
 
@@ -278,6 +284,15 @@ label.checkbox:hover span.checkbox {
 
 .registration #reg1 input[type=submit] {
     margin-top: 20px;
+}
+
+.registration label.checkbox {
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.registration input#savechanges {
+    margin-left: 23%;
+
 }
 
 /* SEARCH PAGE   */
