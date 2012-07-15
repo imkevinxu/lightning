@@ -15,6 +15,9 @@ urlpatterns = patterns('',
     url(r'^', include('lightning_app.appurls')),
     #url(r'^lightning/$', include('lightning.appurls')),
     
+    #Static files
+    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', { 'document_root': settings.STATIC_ROOT }),
+
     #Static Links
 #    url(r'^', TemplateView.as_view(template_name='home.html'), name='home'),
     
@@ -24,14 +27,3 @@ urlpatterns = patterns('',
 #   url(r'^lightning/$', 'lightning_view', name='lightning'),
 #)
 
-
-if settings.DEBUG:
-    urlpatterns = patterns('',
-    url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
-        {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
-    url(r'', include('django.contrib.staticfiles.urls')),
-) + urlpatterns
-else:
-    urlpatterns += patterns('',
-        (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
-    )
