@@ -96,27 +96,21 @@ body {
 /* Portfolio slideshow */
 
 .portfolio-container {
-    margin:0;
-    margin-top:-45px;
-    height:500px;
-    overflow:hidden;
+    height:455px;
 }
 
 .portfolio-container .portfolio {
     height:500px;
     width:100%;
-    margin:0;
-    padding:0;
     position:relative;
     overflow:hidden;
 }
 
-.portfolio-container .portfolio .portfolio-image {
-    margin:0;
-    padding:0;
-    height:500px;
-    float:left;
+.portfolio-container img {
     position:relative;
+    left:-45px;
+    top:0px;
+    z-index:-1;
 }
 
 .profile {
