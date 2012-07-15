@@ -41,6 +41,21 @@ body {
 
 .top-bar #logo {
     font-size: 22px;
+    line-height: 40px;
+    display: inline-block;
+    margin-top:0px;
+}
+#lightning {
+    display: inline-block;
+    background: url(/static/images/icon.png) no-repeat 0 0;
+    height: 40px;
+    width: 30px;
+    position:relative;
+    float:left;
+    margin-top:-2px;
+}
+.top-bar #logo:hover #lightning {
+    background-position: 0 -44px;
 }
     
 .top-bar a{color:#fff;font-weight:bold}
