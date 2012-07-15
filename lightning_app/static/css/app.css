@@ -35,17 +35,15 @@ body {
 .top-bar a{color:#fff;font-weight:bold}
 
 .top-bar {
-    font-family:"museo-slab", Arial, sans-serif;
+    font-family:"museo-sans", Arial, sans-serif;
+    font-weight:bold;
 }
-
 
 .top-bar #right-nav a {
     display: inline-block;
     padding: 0 15px;
     text-align: center;
 }
-
-
 
 .top-bar #right-nav a:hover {
     background-color: #2BB879;
@@ -106,27 +104,44 @@ body {
     overflow:hidden;
 }
 
-.portfolio-container img {
-    max-height:500px;
+.portfolio-container .portfolio {
+    height:500px;
+    width:100%;
+    margin:0;
+    padding:0;
+    position:relative;
+    overflow:hidden;
+}
+
+.portfolio-container .portfolio .portfolio-image {
+    margin:0;
+    padding:0;
+    height:500px;
+    float:left;
+    position:relative;
+}
+
+.profile-container {
+    background:url("../images/gif.gif");
+    width:100%;
+    border-top:solid 1px white;
+    -moz-box-shadow: 0 0 5px 2px #888;
+       -webkit-box-shadow: 0 0 5px 2px #888;
+       box-shadow:  0 0 5px 2px #888;
 }
 
 .name-container {
-    background:url("../images/noisepattern.png");
-    width:100%;
-    z-index:5;
-    -moz-box-shadow: 0 0 5px 2px #888;
-    -webkit-box-shadow: 0 0 5px 2px #888;
-    box-shadow:  0 0 5px 2px #888;
+    margin-right: auto;
+    margin-left:auto;
+    width:700px;
     min-height:400px;
 }
 
 .propic {
     z-index:100 !important;
-    position:absolute;
-    margin:40px;
     margin-top:20px;
-    height:220px;
-    width:220px;
+    height:140px;
+    width:140px;
     background:white;
     -webkit-border-radius:3px;
     border-radius:3px;
@@ -137,24 +152,27 @@ body {
 }
 
 .propic img {    
-    height:95%;
+    height:97%;
     margin-left:auto;
     margin-right:auto;
-    padding-top:11px;
+    padding-top:7px;
     display:block;
     
 }
 
-#name-information {
-    margin-left:280px;
-    padding-top:30px;
+.user-information {
     font-style:"museo-slab", sans-serif;
     
 }
 
 #name {
     font-weight:bold;
-    font-size:44px;
+    font-size:36px;
+}
+
+.name-information {
+    margin-left:170px;
+    margin-top:-130px;
 }
 
 .info {

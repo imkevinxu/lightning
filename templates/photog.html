@@ -10,28 +10,61 @@
 {% block content %}
 
 <div class="portfolio-container">
-  <img src="{{ STATIC_URL }}images/ken/4.jpeg" />
-</div>
-
-<div class="propic">
-  <img src="{{ user.profilepic }}">
-</div>
-  
-<div class="name-container">
-  <div id="name-information">
-    <span id="name">{{ user.fullname }}</span><br />
-    <span class="info">Specializes in <span class="tag">families</span>, <span class="tag">weddings</span>, <span class="tag">special events</span></span><br />
-    <span class="info">Located in <span class="tag">{{ user.location }}</span></span>
-    <div class="quote">
-        <p>I started my journey in photography when my dad gave me his Nikon SLR (the F-501) to use for high school yearbook. It allowed me to capture the moments that others on the team missed. In college, I was blessed to be an early adopter of a Sony Cyber-shotF55 digital camera and quickly became the dorm historian everywhere I lived. These days, I primarily shoot with my trusty Canon EOS 5D Mark II digital SLR. (For a closer look at the gear I use, see the Gear page.) The technology is changing so fast, enabling us to see the world through the lens in new ways each day. I can’t wait to see what’s just around the corner!</p>
-
-        <p>In addition to being a freelance photographer, I’m also a technology consultant, multimedia workshop instructor, and computer repair guy.</p>
-    </div>
-    <a href="#booking" name="modal" class="success button" id="contact-button">Contact Me</a>
-    
+  <div class="portfolio">
+  <div class="portfolio-image">
+    <img src="{{ STATIC_URL }}images/ken/4.jpeg" />
   </div>
+  <div class="portfolio-image">
+    <img src="{{ STATIC_URL }}images/ken/5.jpeg" />
+  </div>
+  <div class="portfolio-image">
+    <img src="{{ STATIC_URL }}images/ken/6.jpeg" />
+  </div>
+  <div class="portfolio-image">
+    <img src="{{ STATIC_URL }}images/ken/7.jpeg" />
+  </div>
+  <div class="portfolio-image">
+    <img src="{{ STATIC_URL }}images/ken/8.jpeg" />
+  </div>
+  <div class="portfolio-image">
+    <img src="{{ STATIC_URL }}images/ken/9.jpeg" />
+  </div>
+  <div class="portfolio-image">
+    <img src="{{ STATIC_URL }}images/ken/10.jpeg" />
+  </div>
+  <div class="portfolio-image">
+    <img src="{{ STATIC_URL }}images/ken/1.jpeg" />
+  </div>
+  <div class="portfolio-image">
+    <img src="{{ STATIC_URL }}images/ken/2.jpeg" />
+  </div>
+  <div class="portfolio-image">
+    <img src="{{ STATIC_URL }}images/ken/3.jpeg" />
+  </div>
+  </div>
+  
 </div>
 
+<div class="profile-container">
+  
+  <div class="name-container">
+    <div class="propic">
+      <img src="{{ user.profilepic }}">
+    </div>
+    <div id="user-information">
+      <div class="name-information">
+        <span id="name">{{ user.fullname }}</span><br />
+        <span class="info">Specializes in <span class="tag">families</span>, <span class="tag">weddings</span>, <span class="tag">special events</span></span><br />
+        <span class="info">Located in <span class="tag">{{ user.location }}</span></span>
+        <div class="quote">
+            <p>I started my journey in photography when my dad gave me his Nikon SLR (the F-501) to use for high school yearbook. It allowed me to capture the moments that others on the team missed. These days, I primarily shoot with my trusty Canon EOS 5D Mark II digital SLR. The technology is changing so fast, enabling us to see the world through the lens in new ways each day. I can’t wait to see what’s just around the corner!</p>
+        </div>
+        <a href="#booking" name="modal" class="success button" id="contact-button">Contact Me</a>
+        
+      </div>
+    </div>
+</div>
+    
 <div id="boxes">
 
 <div id="booking" class="window">
@@ -47,6 +80,8 @@
 <!-- Mask to cover the whole screen -->
   <div id="mask"></div>
 </div>
+
+
 
 {% endblock %}
 
