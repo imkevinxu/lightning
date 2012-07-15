@@ -13,11 +13,10 @@
 	<div class="portfolio">
 	{% for photo in photos %}
 		<div class="portfolio-image">
-			<img src="{{ photo.image_url }}" />
+			<img src="{{ photo.image_url }}" width="{{ photo.width }}" height="{{ photo.height }}" />
 		</div>
 	{% endfor %}
 	</div>
-  
 </div>
 
 <div class="profile-container">
