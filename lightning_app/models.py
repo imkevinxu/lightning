@@ -72,3 +72,38 @@ class UserProfile(models.Model):
         photographer.save()
         return photographer
 
+class Photo(models.Model):
+    user = models.ForeignKey(UserProfile)
+
+    name = models.CharField(max_length=255)
+    image_url = models.URLField()
+
+    description = models.TextField(blank=True, null=True)
+    times_viewed = models.IntegerField(blank=True, null=True)
+    rating = models.DecimalField(max_digits=3, decimal_places=1, blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    width = models.IntegerField(blank=True, null=True)
+    height = models.IntegerField(blank=True, null=True)
+    votes_count = models.IntegerField(blank=True, null=True)
+    favorites_count = models.IntegerField(blank=True, null=True)
+    comments_count = models.IntegerField(blank=True, null=True)
+
+    @staticmethod
+    def createPhoto(user, info):
+        name = info['name']
+        image_url = info['image_url']
+
+        pic = Photo.objects.create(user=user, name=name, image_url=image_url)
+
+        pic.description = info['description']
+        pic.times_viewed = info['times_viewed']
+        pic.rating = info['rating']
+        pic.created_at = info['created_at']
+        pic.width = info['width']
+        pic.height = info['height']
+        pic.votes_count = info['votes_count']
+        pic.favorites_count = info['favorites_count']
+        pic.comments_count = info['comments_count']
+
+        pic.save()
+
