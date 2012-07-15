@@ -102,28 +102,30 @@ body {
 /* Portfolio slideshow */
 
 .portfolio-container {
-    margin:0;
-    margin-top:-45px;
-    height:500px;
-    overflow:hidden;
+    height:455px;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    position: relative;
+    z-index:-999;
+
 }
 
 .portfolio-container .portfolio {
     height:500px;
-    width:100%;
-    margin:0;
-    padding:0;
-    position:relative;
-    overflow:hidden;
+    overflow: hidden;
+    width: 9999px;
 }
 
-.portfolio-container .portfolio .portfolio-image {
-    margin:0;
-    padding:0;
-    height:500px;
-    float:left;
-    position:relative;
+.portfolio-container li {
+    display: inline-block;
+    float: left;
 }
+
+.portfolio-container img {
+    z-index:-999;
+}
+
 
 .profile {
     margin-top: 20px !important;

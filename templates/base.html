@@ -51,8 +51,8 @@
             </div>
             <div class="four columns" id="right-nav">
                     {% if not registration %}
-                        {% if user.is_authenticated and not user.is_superuser %}
-                            <a href="/{{ user.username }}" id="profile">{{ user.get_profile.fullname }}</a>
+                        {% if request.user.is_authenticated and not request.user.is_superuser %}
+                            <a href="/{{ user.username }}" id="profile">{{ request.user.get_profile.fullname }}</a>
                         {% else %}
                             <a href="{% url reg1 %}" id="join">Join as a photographer</a>
                         {% endif %}

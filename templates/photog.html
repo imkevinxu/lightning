@@ -31,21 +31,26 @@
     .glyph { cursor: finger; font-size: 44px; line-height: 1; padding-right: 8px; }
     .glyph.general { font-family: "FoundationIconsGeneral"; }
     .glyph.social { font-family: "FoundationIconsSocial"; }
-    </style>
+    #first_orbit { background: url(spinner.gif) center center #f4f4f4; height: 300px; }
+    #first_orbit img { display: none; }
+
+    #first_orbit.orbit { background: none; }
+    #first_orbit.orbit img { display: block; }
+</style>
 
 {% endblock %}
 
 {% block outside_content %}
 
-<!-- <div class="portfolio-container">
+<div class="portfolio-container">
     <div class="portfolio">
-        {% for photo in photos %}
-            <div class="portfolio-image">
-                <img src="{{ photo.image_url }}" width="{{ photo.width }}" height="{{ photo.height }}" />
-            </div>
-        {% endfor %}
+        <ul>        
+            {% for photo in photos|slice:":15" %}
+                <li><img src="{{ photo.image_url }}" /></li>
+            {% endfor %}
+        </ul>
     </div>
-</div> -->
+</div>
 
 <div class="profile-container">
     <div class="row">
@@ -115,4 +120,23 @@
 
 {% endblock %}
 
-{% block javascript %}{% endblock %}
+{% block javascript %}
+
+    <script src="{{ STATIC_URL }}js/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            $('.portfolio-container').scrollTo( 600, 0 );
+            var x = 0;
+
+            window.setInterval(function(){
+              $('.portfolio-container').scrollTo('+=900px', 400, {axis:'x',easing:'linear'} );
+              x += 1;
+              if (x == 7) {
+                  $('.portfolio-container').scrollTo( 0, 1500 );
+                  x = 0;
+              }
+            }, 3000);
+        })();
+    </script>
+
+{% endblock %}
