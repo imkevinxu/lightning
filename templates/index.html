@@ -7,26 +7,18 @@
 
 {% block content %}
 
-<form method="POST" class="row">
-	{% csrf_token %}
+<div class = "ten columns">
 
-	I'm looking for a photographer in 
-	<select name="location" class="dropdown">
-		<option selected="selected">San Francisco</option>
-	</select>
+   <h3>I'm looking for a photographer who specializes in </h3>
+    <form action="{% url reg2 %}" method="post" id="reg1">{% csrf_token %} 
+        
+        <input type="text" name="tags" placeholder="Weddings"/>
+        <h3>near</h3>
+       	<input type="text" name="city" placeholder="San Francisco"/>
+        <input type="submit" name="submit" value="Create Account" class="button"/>
+    </form>
 
-	who specializes in
-
-	<select name="specialty" class="dropdown">
-		<option selected="selected">anything</option>
-		<option selected="selected">portraits</option>
-		<option selected="selected">weddings</option>
-		<option selected="selected">editorial</option>
-	</select>
-
-	<input type="submit" value="Find my photographer!" />
-
-</form>
+</div>
 
 <div class="gallery">
 

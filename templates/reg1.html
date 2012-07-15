@@ -3,11 +3,14 @@
 {% block title %}Registration | Lightning{% endblock %}
 {% block meta_description %}{% endblock %}
 
-{% block extra_head %}{% endblock %}
+{% block extra_head %}
+
+{% endblock %}
 
 {% block content %}
 
-    <div class="registration seven columns centered">
+
+    <div class="reg-container registration seven columns centered">
         <h1>Join as a photographer</h1>
 
         <form action="{% url reg2 %}" method="post" id="reg1">{% csrf_token %} 
