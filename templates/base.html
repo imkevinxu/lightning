@@ -43,16 +43,23 @@
 
     {# Content #}
     <div class="container top-bar home-border">
-      <div class="attached">
-        <ul class="right">
-          <li class="active">
-            <a href="../search.html">Explore</a>
-          </li>
-          <li id="join">
-            <a href="../reg1.html" class="button join">Join as a photographer</a>
-          </li>
-        </ul>
-      </div>
+        <div class="attached">
+            <ul class="right">
+                <li class="active">
+                    <a href="{% url search %}">Explore</a>
+                </li>
+
+                {% if user.is_authenticated %}
+                    <li>
+                        <a href="{% url reg1 %}" id="join">{{ user.get_profile.fullname }}</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{% url reg1 %}" id="join">Join as a photographer</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
     </div>
     
     <div class="row">

@@ -139,3 +139,6 @@ ul, ol { font-size: 14px; line-height: 1.6; margin-bottom: 17px; list-style-posi
 */
 
 
+form#reg2 #profilepic {
+    width: 250px;
+}

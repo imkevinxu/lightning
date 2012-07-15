@@ -36,3 +36,38 @@ class UserProfile(models.Model):
     fhp_affection = models.IntegerField(blank=True, null=True)
     fhp_photos_count = models.IntegerField(blank=True, null=True)
     profilepic = models.URLField(blank=True, null=True)
+
+    @staticmethod
+    def createUser(user, email=None, password=None):
+        username = user['username']
+
+        baseUser = User.objects.create_user(username, email, password)
+        photographer = UserProfile.objects.create(user=baseUser)
+        photographer.is_photographer = True
+        photographer.fhp_id = user['id']
+        photographer.firstname = user['firstname']
+        photographer.lastname = user['lastname']
+        photographer.fullname = user['fullname']
+        location = filter(None, [user["city"], user["state"], user["country"]])
+        location = ", ".join(location)
+        photographer.location = location
+        photographer.fhp_about = user['about']
+        photographer.fhp_domain = user['domain']
+        if 'website' in user['contacts']:
+            photographer.website = user['contacts']['website']
+        if 'twitter' in user['contacts']:
+            photographer.twitter = user['contacts']['twitter']
+        if 'facebookpage' in user['contacts']:
+            photographer.facebookpage = user['contacts']['facebookpage']
+        if 'flickr' in user['contacts']:
+            photographer.flickr = user['contacts']['flickr']
+        if 'facebook' in user['contacts']:
+            photographer.facebook = user['contacts']['facebook']
+        photographer.fhp_affection = user['affection']
+        photographer.fhp_photos_count = user['photos_count']
+        photographer.profilepic = user['userpic_url']
+        if "http://" not in user['userpic_url']:
+            photographer.profilepic = 'http://500px.com%s' % user['userpic_url']
+        photographer.save()
+        return photographer
+

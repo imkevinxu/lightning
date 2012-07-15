@@ -8,7 +8,7 @@
 {% block content %}
 
     <h1>Welcome awesome photographer!</h1>
-    <form action="{% url reg2 %}" method="post" class="nice">{% csrf_token %} 
+    <form action="{% url reg2 %}" method="post" id="reg1">{% csrf_token %} 
         <input type="text" name="email" placeholder="Email Address"/>
         <input type="password" name="password" placeholder="Password"/>
         <input type="submit" name="submit" value="Create Account" class="button"/>
