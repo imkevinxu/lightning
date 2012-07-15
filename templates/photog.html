@@ -3,7 +3,9 @@
 {% block title %}{% endblock %}
 {% block meta_description %}{% endblock %}
 
-{% block extra_head %}{% endblock %}
+{% block extra_head %}
+<script src='/static/js/modal.js'></script>
+{% endblock %}
 
 {% block content %}
 
@@ -29,6 +31,40 @@
     
   </div>
 </div>
+
+{% extends "base.html" %}
+<!-- Copy and Paste this for every html file. -->
+{% block title %}{% endblock %}
+{% block meta_description %}{% endblock %}
+
+{% block extra_head %}
+
+
+ 
+<li><a href="#booking" name="modal">Modal Sign-up window</a></li>
+
+<div id="boxes">
+
+<div id="booking" class="window">
+  <h1>Book</h1>
+    <form action="{% url search %}" method="post" class="nice">{% csrf_token %}
+        <input type="text" name="email" placeholder="Email Address"/>
+        <input type="phone" name="phone" placeholder="Phone Number"/>
+        <input type="submit" name="submit" value="Contact!" class="button"/>
+    </form>
+ 
+</div>
+ 
+<!-- Mask to cover the whole screen -->
+  <div id="mask"></div>
+</div>
+
+
+
+
+{% endblock %}
+
+{% block javascript %}{% endblock %}
 
 
 {% endblock %}
