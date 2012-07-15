@@ -47,18 +47,19 @@
             <div class="two columnns">
   
                 <a href="{% url index %}" id="logo" class="left logo"><img src="{{ STATIC_URL }}images/icon.png" style="padding:0;margin:0;margin-top:7px;margin-left:18px; height:25px;"/></a>
+
             </div>
             <div class="four columns offset-by-two">
             </div>
             <div class="four columns" id="right-nav">
-                    {% if not registration %}
-                        {% if request.user.is_authenticated and not request.user.is_superuser %}
-                            <a href="/{{ user.username }}" id="profile">{{ request.user.get_profile.fullname }}</a>
-                        {% else %}
-                            <a href="{% url reg1 %}" id="join">Join as a photographer</a>
-                        {% endif %}
+                {% if not registration %}
+                    {% if request.user.is_authenticated and not request.user.is_superuser %}
+                        <a href="/logout" id="profile">Logout</a>
+                        <a href="/{{ user.username }}" id="profile">{{ request.user.get_profile.fullname }}</a>
+                    {% else %}
+                        <a href="{% url reg1 %}" id="join">Join as a photographer</a>
                     {% endif %}
-                    <a href="{% url index %}">Explore</a>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -90,7 +91,6 @@
     <script src="{{ STATIC_URL }}js/jquery.placeholder.min.js"></script>
     <script src="{{ STATIC_URL }}js/jquery.tooltips.js"></script>
     <script src="{{ STATIC_URL }}js/app.js"></script>
-    <script src="{{ STATIC_URL }}js/jquery.lazyload.js"></script>
     {% block javascript %}{% endblock %}
     
     <!-- <script>
