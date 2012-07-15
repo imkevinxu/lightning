@@ -10,7 +10,7 @@
 <div class = "ten columns">
 
    <h3>I'm looking for a photographer who specializes in </h3>
-    <form action="{% url reg2 %}" method="post" id="reg1">{% csrf_token %} 
+    <form action="{% url reg2 %}" method="post">{% csrf_token %}
         
         <select name="tags">
 			<option selected="selected">anything</option>
@@ -28,12 +28,12 @@
 			<option>editorial</option>
 		</select>
 
-        <input type="submit" name="submit" value="Find my photographer!" class="button"/>
+        <input type="submit" name="submit" value="Find my photographer!" class="button" id="find-photographer" />
     </form>
 
 </div>
 
-<div class="gallery">
+<div id="gallery">
 
 {% for user in users %}
      <div class="photo-thumb">
@@ -44,6 +44,16 @@
 
 </div>
 
+<script type="text/x-handlebars-templtae" id="photo-thumb-template">
+     <div class="photo-thumb">
+          <a href="/{{ username }}"><img src="{{ image_url }}" /></a>
+          <div class="name">{{ fullname }}</div></li>
+     </div>
+</script>
+
 {% endblock %}
 
-{% block javascript %}{% endblock %}
+{% block javascript %}
+<script src="{{ STATIC_URL }}js/handlebars.js"></script>
+<script src="{{ STATIC_URL }}js/home.js"></script>
+{% endblock %}
