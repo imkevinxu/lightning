@@ -291,8 +291,12 @@ label.checkbox:hover span.checkbox {
 }
 
 .registration input#savechanges {
-    margin-left: 23%;
+    margin-top: 30px;
+    margin-right: 110px;
+}
 
+.registration form#reg2 {
+    margin-top: 20px;
 }
 
 /* SEARCH PAGE   */

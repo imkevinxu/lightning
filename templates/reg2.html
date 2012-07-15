@@ -3,7 +3,9 @@
 {% block title %}Registration | Lightning{% endblock %}
 {% block meta_description %}{% endblock %}
 
-{% block extra_head %}{% endblock %}
+{% block extra_head %}
+<link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+{% endblock %}
 
 {% block content %}
 
@@ -61,13 +63,16 @@
                             <span class="custom checkbox"></span> Fashion
                         </label>
                     </div>
+                    <center>
+                        <input type="submit" name="submit" value="Save Changes" class="button" id="savechanges"/>
+                    </center>
                 </div>
 
                 <div class="four columns">
                     <img src="{{ photographer.profilepic }}" id="profilepic"/>
+                    <span style="font-family: 'Permanent Marker', cursive;position: absolute; font-size: 20px; bottom: 20px; right: 158px;">{{ photographer.firstname }}</span>
                 </div>
             </div>
-            <input type="submit" name="submit" value="Save Changes" class="button" id="savechanges"/>
         </form>
     </div>
 

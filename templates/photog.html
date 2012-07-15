@@ -1,6 +1,6 @@
 {% extends "base_profile.html" %}
 <!-- Copy and Paste this for every html file. -->
-{% block title %}{% endblock %}
+{% block title %}{{ user.get_profile.fullname }} | Lightning{% endblock %}
 {% block meta_description %}{% endblock %}
 
 {% block extra_head %}
