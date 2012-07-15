@@ -14,3 +14,11 @@ class Base(models.Model):
 
     class Meta:
         abstract = True
+
+class UserProfile(models.Model):
+    # This field is required.
+    user = models.OneToOneField(User)
+
+    # Other fields here
+    is_photographer = models.BooleanField()
+    
