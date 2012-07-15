@@ -14,15 +14,15 @@
     <meta name="description" content="{% block meta_description %}{% endblock %}" />
     <meta name="author" content="{% block meta_author %}{% endblock %}" />
 
-    {# TODO: <link rel="shortcut icon" href="/media/images/favicon.ico" /> #}
-    {# TODO: <link rel="apple-touch-icon" href="/media/images/apple-touch-icon.png" /> #}
+    {# TODO: <link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.ico" /> #}
+    {# TODO: <link rel="apple-touch-icon" href="{{ STATIC_URL }}images/apple-touch-icon.png" /> #}
 
     <!-- Included CSS Files -->
-    <link rel="stylesheet" href="/media/css/foundation.css">
-    <link rel="stylesheet" href="/media/css/app.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/foundation.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/app.css">
 
     <!--[if lt IE 9]>
-        <link rel="stylesheet" href="/media/css/ie.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}/css/ie.css">
     <![endif]-->
     <!--[if gte IE 9]>
         <style type="text/css">
@@ -33,7 +33,7 @@
     <![endif]-->
     
     {% block extra_head %}{% endblock %}
-    <script src="/media/js/modernizr.foundation.js"></script>
+    <script src="{{ STATIC_URL }}js/modernizr.foundation.js"></script>
 
 </head>
 <body>
@@ -57,13 +57,13 @@
     <![endif]-->
 
     <!-- Included JS Files -->
-    <script src="/media/js/jquery.min.js"></script>
-    <script src="/media/js/jquery.reveal.js"></script>
-    <script src="/media/js/jquery.orbit-1.4.0.js"></script>
-    <script src="/media/js/jquery.customforms.js"></script>
-    <script src="/media/js/jquery.placeholder.min.js"></script>
-    <script src="/media/js/jquery.tooltips.js"></script>
-    <script src="/media/js/app.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery.min.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery.reveal.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery.orbit-1.4.0.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery.customforms.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery.placeholder.min.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery.tooltips.js"></script>
+    <script src="{{ STATIC_URL }}js/app.js"></script>
     {% block javascript %}{% endblock %}
     
     <!-- <script>

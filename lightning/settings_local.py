@@ -26,4 +26,7 @@ DATABASES = {
     }
 }
 
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+STATIC_URL = '/static/'
+
 INTERNAL_IPS = ('127.0.0.1', )
