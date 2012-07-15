@@ -3,7 +3,9 @@
 {% block title %}{% endblock %}
 {% block meta_description %}{% endblock %}
 
-{% block extra_head %}{% endblock %}
+{% block extra_head %}
+<script src='/static/js/modal.js'></script>
+{% endblock %}
 
 {% block content %}
 
@@ -12,14 +14,14 @@
 </div>
 
 <div class="propic">
-  <img src="{{ STATIC_URL }}images/ken/user.jpeg">
+  <img src="{{ user.profilepic }}">
 </div>
   
 <div class="name-container">
   <div id="name-information">
-    <span id="name">Kenneth Chan</span><br />
+    <span id="name">{{ user.fullname }}</span><br />
     <span class="info">Specializes in <span class="tag">families</span>, <span class="tag">weddings</span>, <span class="tag">special events</span></span><br />
-    <span class="info">Located in <span class="tag">San Francisco Bay Area</span></span>
+    <span class="info">Located in <span class="tag">{{ user.location }}</span></span>
     <div class="quote">
         <p>I started my journey in photography when my dad gave me his Nikon SLR (the F-501) to use for high school yearbook. It allowed me to capture the moments that others on the team missed. In college, I was blessed to be an early adopter of a Sony Cyber-shotF55 digital camera and quickly became the dorm historian everywhere I lived. These days, I primarily shoot with my trusty Canon EOS 5D Mark II digital SLR. (For a closer look at the gear I use, see the Gear page.) The technology is changing so fast, enabling us to see the world through the lens in new ways each day. I can’t wait to see what’s just around the corner!</p>
 
@@ -29,7 +31,24 @@
     
   </div>
 </div>
+ 
+<li><a href="#booking" name="modal">Modal Sign-up window</a></li>
 
+<div id="boxes">
+
+<div id="booking" class="window">
+  <h1>Book</h1>
+    <form action="{% url search %}" method="post" class="nice">{% csrf_token %}
+        <input type="text" name="email" placeholder="Email Address"/>
+        <input type="phone" name="phone" placeholder="Phone Number"/>
+        <input type="submit" name="submit" value="Contact!" class="button"/>
+    </form>
+ 
+</div>
+ 
+<!-- Mask to cover the whole screen -->
+  <div id="mask"></div>
+</div>
 
 {% endblock %}
 

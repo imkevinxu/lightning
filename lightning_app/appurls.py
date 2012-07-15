@@ -14,6 +14,8 @@ urlpatterns = patterns('lightning_app.views',
     url(r'^reg1/$', 'reg1', name='reg1'),
     url(r'^reg2/$', 'reg2', name='reg2'),
     url(r'^reg3/$', 'reg3', name='reg3'),
+    
     url(r'^photog/$', 'photog', name='photog'),
+    url(r'^(.*)/$', 'show')
 
 )
