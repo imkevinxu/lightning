@@ -7,9 +7,6 @@
 
 {% block content %}
 
-
-
-
 <div class = "ten columns">
 
    <h3>I'm looking for a photographer who specializes in </h3>
@@ -22,56 +19,16 @@
     </form>
 
 </div>
-
 <div class="gallery">
 
-<div class="photo-thumb">
-     <a href=""> <img src="http://discovermagazine.com/2005/may/what-do-animals-think/animals-open.jpg" alt=""></a>
-<div class="name">Name</div>
-</div>
-
-
-<div class="photo-thumb">
-     <a href=""> <img src="http://discovermagazine.com/2005/may/what-do-animals-think/animals-open.jpg" alt=""></a>
-<div class="name">Name</div>
-</div>
-
-<div class="photo-thumb">
-     <a href=""> <img src="http://discovermagazine.com/2005/may/what-do-animals-think/animals-open.jpg" alt=""></a>
-<div class="name">Name</div>
-</div>
-
-<div class="photo-thumb">
-     <a href=""> <img src="http://pcdn.500px.net/9789277/1aaa670c153c2622bd27c5add758e4cc1911ddaf/4.jpg?t=1342338156" alt=""></a>
-<div class="name">Name</div>
-</div>
-
-<div class="photo-thumb">
-     <a href=""> <img src="http://pcdn.500px.net/9789277/1aaa670c153c2622bd27c5add758e4cc1911ddaf/4.jpg?t=1342338156" alt=""></a>
-<div class="name">Name</div>
-</div>
-
-<div class="photo-thumb">
-     <a href=""> <img src="http://pcdn.500px.net/9742671/fabe4d5f22245a886299e8a97ae17c3da0913bc4/3.jpg" alt=""></a>
-<div class="name">Name</div>
-</div>
+{% for user in users %}
+     <div class="photo-thumb">
+          <a href="#"><img src="{{ user.pics.0.image_url }}" /></a>
+          <div class="name">{{ user.fullname }}</div></li>
+     </div>
+{% endfor %}
 
 </div>
-
-<!--
-
-     {% for picture in pictures %}
-     <ul> 
-          <li><img src="{{ picture.url }}" />
-          <div class="name">{{ picture.name }}</div></li>
-     </ul>
-    {% endfor %}
--->
-
-
-
-
-
 
 {% endblock %}
 

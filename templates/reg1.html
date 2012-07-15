@@ -5,40 +5,22 @@
 
 {% block extra_head %}
 
-
-
-<style type="text/css">
-
-
-body { 
-	background: url("http://pcdn.500px.net/2871949/62f5dc7a4c7e05fb64a6ba332964509245b6b1ab/4.jpg") no-repeat center center fixed; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}
-	
-</style>
-
-
 {% endblock %}
 
 {% block content %}
 
 
+    <div class="reg-container registration seven columns centered">
+        <h1>Join as a photographer</h1>
 
-
-	<div class = "reg-container">
-		<div class = "six columns">
-    		<h1>Welcome awesome photographer!</h1>
-    		<form action="{% url reg2 %}" method="post" id="reg1">{% csrf_token %} 
-        		<input type="text" name="email" placeholder="Email Address"/>
-        		<input type="password" name="password" placeholder="Password"/>
-        		<input type="submit" name="submit" value="Create Account" class="button"/>
-    		</form>
-		</div>
-	</div>
-
+        <form action="{% url reg2 %}" method="post" id="reg1">{% csrf_token %} 
+            <input type="text" name="email" placeholder="Email Address"/>
+            <input type="password" name="password" placeholder="Password"/>
+            <center>
+            <input type="submit" name="submit" value="Create Account" class="button"/>
+            </center>
+        </form>
+    </div>
 
 {% endblock %}
 
