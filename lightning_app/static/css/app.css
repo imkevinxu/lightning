@@ -264,6 +264,7 @@ label.checkbox:hover span.checkbox {
 
 .registration {
     margin-top: 50px !important;
+    color: white;
 }
 
 .registration #reg1 input {
@@ -273,6 +274,10 @@ label.checkbox:hover span.checkbox {
 
 .registration #reg1 input[type=text], .registration #reg1 input[type=password] {
     height: 50px;
+}
+
+.registration #reg1 input[type=submit] {
+    margin-top: 20px;
 }
 
 /* SEARCH PAGE   */
@@ -290,19 +295,11 @@ div.name {font-family:"museo-sans", "Helvetica Neue", Arial,sans-serif, sans-ser
 
 
 .reg-container {
-    background-color: rgba(0, 0, 0, 0.65);
-    margin-left:300px;
-    margin-top:100px;
-    height:500px;
-    width:400px;
-    padding:30px;
+    background-color: rgba(0, 0, 0, 0.80);
+    padding:40px;
+    padding-bottom: 80px;
 }
 
-/*body { 
-    background: url("http://pcdn.500px.net/2871949/62f5dc7a4c7e05fb64a6ba332964509245b6b1ab/4.jpg") no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+body#registration { 
+    background: url("http://i.imgur.com/TABvy.jpg") no-repeat center center fixed;
 }*/
-    
