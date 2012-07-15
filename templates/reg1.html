@@ -13,7 +13,9 @@
         <form action="{% url reg2 %}" method="post" id="reg1">{% csrf_token %} 
             <input type="text" name="email" placeholder="Email Address"/>
             <input type="password" name="password" placeholder="Password"/>
+            <center>
             <input type="submit" name="submit" value="Create Account" class="button"/>
+            </center>
         </form>
     </div>
 
