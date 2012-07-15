@@ -111,5 +111,5 @@ class Photo(models.Model):
 
 class Tag(models.Model):
     tagname = models.CharField(max_length=255)
-    user = models.ForeignKey(UserProfile)
+    user = models.ManyToManyField(UserProfile, blank=True, null=True)
     

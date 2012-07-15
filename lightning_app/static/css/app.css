@@ -64,9 +64,7 @@ ul, ol { font-size: 14px; line-height: 1.6; margin-bottom: 17px; list-style-posi
     font-family:"museo-slab", Arial, sans-serif;
 }
 
-#join {
-    text-shadow: 0 0 2px white;
-    
+#join {    
 }
 
 #join:hover {
@@ -254,3 +252,44 @@ label.checkbox:hover span.checkbox {
     box-shadow: 0 0 5px rgba(81, 203, 238, 1);
     border: 1px solid rgba(81, 203, 238, 1);
 }
+
+/* MODAL WINDOW  */
+#mask {
+  position:fixed;
+  left:0px;
+  top:0px;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+}
+ 
+#boxes .window {
+  position:fixed;
+  left:0;
+  top:0;
+  width:200px;
+  height:200px;
+  display:none;
+  z-index:9999;
+  padding:20px;
+}
+
+#boxes #booking {
+  width:375px;
+  height:203px;
+  padding:10px;
+  background-color:#ffffff;
+}
+
+/* SEARCH PAGE   */
+.gallery .photo-thumb {list-style-type:none; position:relative; margin:0; margin-top:20px; padding:0;}
+.gallery .photo-thumb:nth-child(8n+1) {clear: both;}
+
+.gallery .photo-thumb { display: block; overflow: hidden; float:left; width:323px; height: 300px; color:#FFFFFF;}
+
+.gallery img { max-width:300px; max-height: 300px; background-color: black; margin-left:10px; margin-bottom:-41px; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);}
+.gallery a {text-decoration:none;color:inherit;}
+
+.gallery .photo-thumb:hover div.name{color:#3589A7}
+
+div.name {font-family:"museo-sans", "Helvetica Neue", Arial,sans-serif, sans-serif; text-align:left; font-size:14px;text-shadow:rgba(0, 0, 0, 0.9); background-color:rgba(0, 0, 0, 0.65);width: 300px; height: 40px; padding-top:12px; padding-left:12px; margin-left: 10px; margin-right:12px; position:absolute;}
