@@ -4,7 +4,6 @@ from django.contrib.auth.views import login, logout
 urlpatterns = patterns('lightning_app.views',
     
     url(r'^$', 'index', name='index'),
-    url(r'^search/$', 'search', name='search'),
     
     url(r'^login/$', login, kwargs=dict(template_name='login.html'),
         name='login'),

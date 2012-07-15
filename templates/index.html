@@ -7,6 +7,38 @@
 
 {% block content %}
 
+<form method="POST" class="row">
+	{% csrf_token %}
+
+	I'm looking for a photographer in 
+	<select name="location" class="dropdown">
+		<option selected="selected">San Francisco</option>
+	</select>
+
+	who specializes in
+
+	<select name="specialty" class="dropdown">
+		<option selected="selected">anything</option>
+		<option selected="selected">portraits</option>
+		<option selected="selected">weddings</option>
+		<option selected="selected">editorial</option>
+	</select>
+
+	<input type="submit" value="Find my photographer!" />
+
+</form>
+
+<div class="gallery">
+
+{% for user in users %}
+     <div class="photo-thumb">
+          <a href="#"><img src="{{ user.pics.0.image_url }}" /></a>
+          <div class="name">{{ user.fullname }}</div></li>
+     </div>
+{% endfor %}
+
+</div>
+
 {% endblock %}
 
 {% block javascript %}{% endblock %}
