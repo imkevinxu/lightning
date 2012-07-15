@@ -7,10 +7,11 @@
 
 {% block content %}
 
-    <form action="">
-        <input type="text" name="email"/>
-        <input type="password" name="password"/>
-        <input type="submit" name="submit" value="Create Account"/>
+    <h1>Welcome awesome photographer!</h1>
+    <form action="{% url reg2 %}" method="post" class="nice">{% csrf_token %} 
+        <input type="text" name="email" placeholder="Email Address"/>
+        <input type="password" name="password" placeholder="Password"/>
+        <input type="submit" name="submit" value="Create Account" class="button"/>
     </form>
 
 {% endblock %}
