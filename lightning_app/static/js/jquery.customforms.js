@@ -148,6 +148,12 @@ jQuery(document).ready(function ($) {
         $element.toggleClass('checked');
 
         $input.trigger('change');
+        $input.toggleClass('checked');
+        if ($input.hasClass('checked')) {
+          $input.attr("value", $element.parent().text().replace(/^\s*|\s*$/g, ""));
+        } else {
+          $input.removeAttr("value");
+        }
     }
   }
   

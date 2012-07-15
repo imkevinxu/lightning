@@ -75,6 +75,7 @@ class UserProfile(models.Model):
 class Photo(models.Model):
     user = models.ForeignKey(UserProfile)
 
+    photo_id = models.IntegerField()
     name = models.CharField(max_length=255)
     image_url = models.URLField()
 
@@ -90,10 +91,11 @@ class Photo(models.Model):
 
     @staticmethod
     def createPhoto(user, info):
+        photo_id = info['id']
         name = info['name']
         image_url = info['image_url']
 
-        pic = Photo.objects.create(user=user, name=name, image_url=image_url)
+        pic = Photo.objects.create(photo_id=photo_id, user=user, name=name, image_url=image_url)
 
         pic.description = info['description']
         pic.times_viewed = info['times_viewed']
@@ -107,3 +109,7 @@ class Photo(models.Model):
 
         pic.save()
 
+class Tag(models.Model):
+    tagname = models.CharField(max_length=255)
+    user = models.ForeignKey(UserProfile)
+    
