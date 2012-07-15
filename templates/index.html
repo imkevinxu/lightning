@@ -12,10 +12,23 @@
    <h3>I'm looking for a photographer who specializes in </h3>
     <form action="{% url reg2 %}" method="post" id="reg1">{% csrf_token %} 
         
-        <input type="text" name="tags" placeholder="Weddings"/>
+        <select name="tags">
+			<option selected="selected">anything</option>
+			<option>portraits</option>
+			<option>weddings</option>
+			<option>editorial</option>
+		</select>
+
         <h3>near</h3>
-       	<input type="text" name="city" placeholder="San Francisco"/>
-        <input type="submit" name="submit" value="Create Account" class="button"/>
+       	
+        <select name="city">
+			<option selected="selected">San Francisco</option>
+			<option>portraits</option>
+			<option>weddings</option>
+			<option>editorial</option>
+		</select>
+
+        <input type="submit" name="submit" value="Find my photographer!" class="button"/>
     </form>
 
 </div>
