@@ -44,20 +44,20 @@
     {# Content #}
     <div class="top-bar">
         <div class="row">
-            <div class="two columnns">
+            <div class="two columns">
                 <a href="{% url index %}" id="logo" class="left">Lightning</a>
             </div>
             <div class="four columns offset-by-two">
             </div>
             <div class="four columns" id="right-nav">
-                    {% if not registration %}
-                        {% if request.user.is_authenticated and not request.user.is_superuser %}
-                            <a href="/{{ user.username }}" id="profile">{{ request.user.get_profile.fullname }}</a>
-                        {% else %}
-                            <a href="{% url reg1 %}" id="join">Join as a photographer</a>
-                        {% endif %}
+                {% if not registration %}
+                    {% if request.user.is_authenticated and not request.user.is_superuser %}
+                        <a href="/logout" id="profile">Logout</a>
+                        <a href="/{{ user.username }}" id="profile">{{ request.user.get_profile.fullname }}</a>
+                    {% else %}
+                        <a href="{% url reg1 %}" id="join">Join as a photographer</a>
                     {% endif %}
-                    <a href="{% url index %}">Explore</a>
+                {% endif %}
             </div>
         </div>
     </div>

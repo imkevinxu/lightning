@@ -315,6 +315,10 @@ label.checkbox:hover span.checkbox {
     margin-bottom: 20px;
     position: relative;
     background-color:rgba(0, 0, 0, 0.65);
+
+    -moz-box-shadow: 1px 1px 3px #888;
+    -webkit-box-shadow: 1px 1px 3px #888;
+    box-shadow: 1px 1px 3px #888;
 }
 
 .gallery img {
@@ -342,7 +346,7 @@ label.checkbox:hover span.checkbox {
 }
 
 .gallery .photo-thumb:hover .name {
-    height: 50px;
+    height: 45px;
     color: #2BA6CB;
     -webkit-transition-duration: 300ms;
     -webkit-transition-timing-function: ease;
@@ -359,7 +363,7 @@ label.checkbox:hover span.checkbox {
 
 .search-container {
     background-color: rgba(0, 0, 0, 0.80);
-    padding: 20px 35px;
+    padding: 20px 30px;
     margin-top: 30px;
 }
 
