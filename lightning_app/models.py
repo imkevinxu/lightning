@@ -81,7 +81,7 @@ class Photo(models.Model):
 
     description = models.TextField(blank=True, null=True)
     times_viewed = models.IntegerField(blank=True, null=True)
-    rating = models.DecimalField(max_digits=3, decimal_places=1, blank=True, null=True)
+    rating = models.FloatField(blank=True, null=True)
     created_at = models.DateTimeField(blank=True, null=True)
     width = models.IntegerField(blank=True, null=True)
     height = models.IntegerField(blank=True, null=True)
