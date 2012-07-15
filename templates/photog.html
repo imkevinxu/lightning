@@ -31,11 +31,6 @@
     .glyph { cursor: finger; font-size: 44px; line-height: 1; padding-right: 8px; }
     .glyph.general { font-family: "FoundationIconsGeneral"; }
     .glyph.social { font-family: "FoundationIconsSocial"; }
-    #first_orbit { background: url(spinner.gif) center center #f4f4f4; height: 300px; }
-    #first_orbit img { display: none; }
-
-    #first_orbit.orbit { background: none; }
-    #first_orbit.orbit img { display: block; }
 </style>
 
 {% endblock %}
@@ -64,19 +59,25 @@
                 <a href="#booking" name="modal" class="success button" data-reveal-id="contact-modal" id="contact-button">Contact Me</a>
             </div>
 
-            <div class="ten columns">
+            <div class="nine columns offset-by-one">
                 <div class="profile_info">
                     <h3 id="name">{{ user.fullname }}</h3>
 
-                    <span class="info">Specializes in
-                        {% for tag in tags %}
-                            <span class="tag">{{ tag }}</span>{% if not forloop.last %}, {% endif %}
-                        {% endfor %}
-                    </span>
+                    {% if tags %}
+                        <span class="info">Specializes in
+                            {% for tag in tags %}
+                                <span class="tag">{{ tag }}</span>{% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                        </span>
+                    {% endif %}
 
-                    <span class="info">Located in <span class="tag">{{ user.location }}</span></span>
-
-                    <p class="quote">{{ user.fhp_about }}</p>
+                    {% if user.location %}
+                        <span class="info">Located in <span class="tag">{{ user.location }}</span></span>
+                    {% endif %}
+                    
+                    {% if user.fhp_about %}
+                        <p class="quote">{{ user.fhp_about }}</p>
+                    {% endif %}
 
                     {% if user.website %}
                         <a href="http://{{ user.website }}" target="_blank"><span class="glyph general">m</span></a>

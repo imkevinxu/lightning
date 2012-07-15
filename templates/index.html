@@ -1,9 +1,24 @@
 {% extends "base.html" %}
 <!-- Copy and Paste this for every html file. -->
-{% block title %}Lightning{% endblock %}
+{% block title %}Explore | Lightning{% endblock %}
 {% block meta_description %}{% endblock %}
 
 {% block extra_head %}
+<style type="text/css">
+    @font-face {
+      font-family: 'FoundationIconsGeneral';
+      src: url('{{ STATIC_URL }}fonts/foundation-icons-general.eot');
+      src: url('{{ STATIC_URL }}fonts/foundation-icons-general.eot?#iefix') format('embedded-opentype'),
+           url('{{ STATIC_URL }}fonts/foundation-icons-general.woff') format('woff'),
+           url('{{ STATIC_URL }}fonts/foundation-icons-general.ttf') format('truetype'),
+           url('{{ STATIC_URL }}fonts/foundation-icons-general.svg#FoundationIconsGeneral') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+    /* CSS to style glyphs */
+    .glyph { cursor: finger; font-size: 44px; line-height: 1; padding-right: 8px; }
+    .glyph.general { font-family: "FoundationIconsGeneral"; }
+</style>
 
 <script type="text/javascript">
     $(function() {          
@@ -17,46 +32,50 @@
 
 {% block content %}
 
-<<<<<<< HEAD
-<div class = "search-container ten columns">
-         
-   <h3 class ="white">I'm looking for a photographer who specializes in </h3>
-    <form action="{% url reg2 %}" method="post" id="reg1">{% csrf_token %} 
-     
-    
-    <select name="tags">
-			<option selected="selected">anything</option>
-			<option>portraits</option>
-			<option>weddings</option>
-			<option>editorial</option>
-		</select>
+<div class="row">
+    <div class="twelve columns">
+        <div class="search-container ten columns">
 
-        <h3 class="white">near</h3>
-       	
-        <select name="city">
-			<option selected="selected">San Francisco</option>
-			<option>portraits</option>
-			<option>weddings</option>
-			<option>editorial</option>
-		</select>
 
-        <input type="submit" name="submit" value="Find my photographer!" class="button" id="find-photographer" />
-    </form>
+            <form action="" method="post" id="search">{% csrf_token %} 
+
+                <h2 class ="white" style="display: inline;line-height:140%">I'm looking for a photographer who specializes in</h2>
+                    <select id="tags" name="tags">
+                        <option selected="selected" value="anything"></option>
+                        <option value="anything">anything</option>
+                        <option value="portraits">portraits</option>
+                        <option value="weddings">weddings</option>
+                        <option value="editorial">editorial</option>
+                    </select>
+
+                <h2 class="white" style="display:inline; margin-right:10px; margin-left: 10px;">near</h2>
+
+                    <select id="city" name="city">
+                        <option selected="selected" value="San Francisco">San Francisco</option>
+                    </select>
+
+                <input type="submit" name="submit" value="f" class="button glyph general" id="find-photographer" />
+            </form>
+
+        </div>
+    </div>
+
+    <div class="gallery twelve columns">
+
+        {% for user in users|slice:":10" %}
+            {% if user.pics.0.image_url %}
+                <a href="/{{ user.username }}">
+                    <div class="photo-thumb">
+                        <div class="name">{{ user.fullname }}</div>
+                        <img src="{{ user.pics.0.image_url }}" />
+                     </div>
+                 </a>
+            {% endif %}
+        {% endfor %}
+
+    </div>
 
 </div>
-
-
-
-<div class="gallery">
-
-{% for user in users %}
-     <div class="photo-thumb">
-       <div class="name">{{ user.fullname }}</div></li>
-          <a href="/{{ user.username }}"><img src="{{ user.pics.0.image_url }}" /></a>
-     </div>
-{% endfor %}
-
-</div> 
 
 <script type="text/x-handlebars-templtae" id="photo-thumb-template">
      <div class="photo-thumb">
