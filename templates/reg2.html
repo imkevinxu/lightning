@@ -1,11 +1,21 @@
 {% extends "base.html" %}
 <!-- Copy and Paste this for every html file. -->
-{% block title %}{% endblock %}
+{% block title %}Registration | Lightning{% endblock %}
 {% block meta_description %}{% endblock %}
 
 {% block extra_head %}{% endblock %}
 
 {% block content %}
+
+    <h1>Thanks for signing up {{ photographer.fullname }}</h1>
+    <form action="{% url reg3 %}" method="post" class="nice">{% csrf_token %} 
+        <input type="text" name="location" value="{{ photographer.location }}"/>
+        <input type="text" name="email" placeholder="Email Address"/>
+        <input type="text" name="email" placeholder="Email Address"/>
+        <input type="text" name="email" placeholder="Email Address"/>
+        <input type="submit" name="submit" value="Save Changes" class="button"/>
+    </form>
+
 {% endblock %}
 
 {% block javascript %}{% endblock %}

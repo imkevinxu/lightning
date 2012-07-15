@@ -21,4 +21,18 @@ class UserProfile(models.Model):
 
     # Other fields here
     is_photographer = models.BooleanField()
-    
+    fhp_id = models.IntegerField(blank=True, null=True)
+    firstname = models.CharField(max_length=255, blank=True, null=True)
+    lastname = models.CharField(max_length=255, blank=True, null=True)
+    fullname = models.CharField(max_length=255, blank=True, null=True)
+    location = models.CharField(max_length=255, blank=True, null=True)
+    fhp_about = models.CharField(max_length=255, blank=True, null=True)
+    fhp_domain = models.URLField(blank=True, null=True)
+    website = models.URLField(blank=True, null=True)
+    twitter = models.URLField(blank=True, null=True)
+    facebookpage = models.URLField(blank=True, null=True)
+    flickr = models.URLField(blank=True, null=True)
+    facebook = models.URLField(blank=True, null=True)
+    fhp_affection = models.IntegerField(blank=True, null=True)
+    fhp_photos_count = models.IntegerField(blank=True, null=True)
+    profilepic = models.URLField(blank=True, null=True)
