@@ -18,6 +18,12 @@ body {
     clear: both;
 }
 
+.item {
+  width: 310px;
+  margin: 10px;
+  float: left;
+}
+
 /* Top nav bar stylings */
 .top-bar { 
     -moz-box-shadow:    0px 0px 10px 0px rgba(0,0,0,0.7);
@@ -300,23 +306,32 @@ label.checkbox:hover span.checkbox {
 }
 
 /* SEARCH PAGE   */
-.gallery .photo-thumb {list-style-type:none; position:relative; margin:0; margin-top:20px; padding:0;}
-.gallery .photo-thumb:nth-child(8n+1) {clear: both;}
+#gallery .photo-thumb {list-style-type:none; position:relative; margin:0; margin-top:20px; margin-right:8px;padding:0;}
+#gallery .photo-thumb:nth-child(8n+1) {clear: both;}
 
-.gallery .photo-thumb { display: block; overflow: hidden; float:left; width:323px; height: 300px; color:#FFFFFF;}
+#gallery .photo-thumb { display: block; overflow: hidden; float:left; width:310px; height: 310px; color:#FFFFFF;}
 
-.gallery img { max-width:300px; max-height: 300px; background-color: black; margin-left:10px; margin-bottom:-41px; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);}
+.gallery img { max-width:310px; background-color: black; margin-left:10px; margin-bottom:-31px; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);}
+
 .gallery a {text-decoration:none;color:inherit;}
 
-.gallery .photo-thumb:hover div.name{color:#3589A7}
 
-div.name {font-family:"museo-sans", "Helvetica Neue", Arial,sans-serif, sans-serif; text-align:left; font-size:14px;text-shadow:rgba(0, 0, 0, 0.9); background-color:rgba(0, 0, 0, 0.65);width: 300px; height: 40px; padding-top:12px; padding-left:12px; margin-left: 10px; margin-right:12px; position:absolute;}
+#gallery .photo-thumb:hover div.name{color:#3589A7}
+
+div.name {font-family:"museo-sans", "Helvetica Neue", Arial,sans-serif, sans-serif; text-align:left; font-size:14px;text-shadow:rgba(0, 0, 0, 0.9); background-color:rgba(0, 0, 0, 0.65);width: 310px; height: 40px; padding-top:12px; padding-left:12px;  position:absolute;}
 
 
 .reg-container {
     background-color: rgba(0, 0, 0, 0.80);
     padding:40px;
     padding-bottom: 80px;
+}
+
+.search-container {
+    background-color: rgba(0, 0, 0, 0.80);
+    padding:20px;
+    margin-left:10px;
+    margin-top: 20px;
 }
 
 body#registration { 
