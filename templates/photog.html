@@ -110,11 +110,26 @@
       <input type="text" name="name" placeholder="Your Name"/>
         <input type="text" name="email" placeholder="Your Email Address"/>
         <input type="text" name="phone" placeholder="Your Phone Number"/>
+        <input type="date" name="date" placeholder="Date of event"/>
+        
         <label for="message">Tell {{ user.firstname }} what you're looking for.</label>
         <textarea id="message" name="message" rows="3"></textarea>
-        <center>
-            <input type="submit" name="submit" value="Contact Me" class="success button"/>
-        </center>
+        <input type="submit" name="submit" value="Contact Me" class="success button"/>
+         <script type="text/javascript">
+          $("#date").glDatePicker(
+          {           
+              cssName: "calendar",
+              startDate: -1,
+              endDate: -1,
+              selectedDate: -1,
+              showPrevNext: true,
+              allowOld: true,
+              showAlways: false,
+              position: "absolute",
+              onChange: null
+          });
+        </script>
+       
     </form>
     <a class="close-reveal-modal">&#215;</a>
 </div>
@@ -126,15 +141,16 @@
     <script src="{{ STATIC_URL }}js/jquery.scrollTo-min.js"></script>
     <script type="text/javascript">
         (function() {
-            $('.portfolio-container').scrollTo( 600, 0 );
+        	$('.portfolio-container').scrollTo(600, 0);
             var x = 0;
 
             window.setInterval(function(){
-              $('.portfolio-container').scrollTo('+=900px', 400, {axis:'x',easing:'linear'} );
               x += 1;
-              if (x == 7) {
+              if (x == 8) {
                   $('.portfolio-container').scrollTo( 0, 1500 );
                   x = 0;
+              } else {
+              	$('.portfolio-container').scrollTo('+=900px', 800, { axis:'x', easing:'linear' } );
               }
             }, 3000);
         })();
