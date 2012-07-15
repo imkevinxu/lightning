@@ -1,0 +1,27 @@
+{% extends "base_profile.html" %}
+<!-- Copy and Paste this for every html file. -->
+{% block title %}{% endblock %}
+{% block meta_description %}{% endblock %}
+
+{% block extra_head %}{% endblock %}
+
+{% block content %}
+
+<div class="portfolio-container">
+  <img src="{{ STATIC_URL }}images/ken/4.jpeg" />
+</div>
+<div class="propic">
+  <img src="{{ STATIC_URL }}images/ken/user.jpeg">
+  </div>
+<div class="name-container">
+  <div id="name-information">
+    <span id="name">Kenneth Chan</span><br />
+    <span class="info">Specializes in <span class="tag">weddings</span>, <span class="tag">events</span>, <span class="tag">portraits</span></span><br />
+    <span class="info">Located in <span class="tag">Sunnyvale, CA</span></span>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block javascript %}{% endblock %}
