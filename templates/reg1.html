@@ -3,15 +3,15 @@
 {% block title %}Registration | Lightning{% endblock %}
 {% block meta_description %}{% endblock %}
 
-{% block extra_head %}
+{% block extra_head %}{% endblock %}
 
-{% endblock %}
+{% block body_id %}registration{% endblock %}
 
 {% block content %}
 
 
     <div class="reg-container registration seven columns centered">
-        <h1>Join as a photographer</h1>
+        <h1 class="white">Join as a photographer</h1>
 
         <form action="{% url reg2 %}" method="post" id="reg1">{% csrf_token %} 
             <input type="text" name="email" placeholder="Email Address"/>

@@ -39,7 +39,7 @@
     <script src="{{ STATIC_URL }}js/modernizr.foundation.js"></script>
 
 </head>
-<body>
+<body id="{% block body_id %}{% endblock %}">
 
     {# Content #}
     <div class="top-bar">
@@ -51,7 +51,7 @@
             </div>
             <div class="four columns" id="right-nav">
                     {% if not registration %}
-                        {% if user.is_authenticated %}
+                        {% if user.is_authenticated and not user.is_superuser %}
                             <a href="{% url reg1 %}" id="profile">{{ user.get_profile.fullname }}</a>
                         {% else %}
                             <a href="{% url reg1 %}" id="join">Join as a photographer</a>
