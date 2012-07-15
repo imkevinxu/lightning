@@ -43,7 +43,7 @@
                     <label class="right inline">Phone:</label>
                 </div>
                 <div class="ten mobile-three columns">
-                    <input type="text" name="phone" placeholder="888-555-5555" class="nine"/>
+                    <input type="text" name="phone" {% if photographer.phone != None %}value="{{ photographer.phone }}"{% endif %} placeholder="888-555-5555" class="nine"/>
                 </div>
 
                 <div class="two mobile-one columns">
