@@ -101,14 +101,31 @@
     <p class="lead">Your professional photographer is only a text away</p>
 
     <form method="">{% csrf_token %}
+      <div id="">
       <input type="text" name="name" placeholder="Your Name"/>
         <input type="text" name="email" placeholder="Your Email Address"/>
         <input type="text" name="phone" placeholder="Your Phone Number"/>
+        <input type="date" name="date" placeholder="Date of event"/>
+        
         <label for="message">Tell {{ user.firstname }} what you're looking for.</label>
         <textarea id="message" name="message" rows="3"></textarea>
-        <center>
-            <input type="submit" name="submit" value="Contact Me" class="success button"/>
-        </center>
+        <input type="submit" name="submit" value="Contact Me" class="success button"/>
+        </div>
+        <script type="text/javascript">
+          $("#date").glDatePicker(
+          {           
+              cssName: "calendar",
+              startDate: -1,
+              endDate: -1,
+              selectedDate: -1,
+              showPrevNext: true,
+              allowOld: true,
+              showAlways: false,
+              position: "absolute",
+              onChange: null
+          });
+        </script>
+       
     </form>
     <a class="close-reveal-modal">&#215;</a>
 </div>
