@@ -108,6 +108,7 @@ body {
     overflow-y: hidden;
     position: relative;
     z-index:-999;
+    background-color:black;
 
 }
 
@@ -313,6 +314,7 @@ label.checkbox:hover span.checkbox {
     margin-right: 10px;
     margin-bottom: 20px;
     position: relative;
+    background-color:rgba(0, 0, 0, 0.65);
 }
 
 .gallery img {

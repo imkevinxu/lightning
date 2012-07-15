@@ -19,15 +19,6 @@
     .glyph { cursor: finger; font-size: 44px; line-height: 1; padding-right: 8px; }
     .glyph.general { font-family: "FoundationIconsGeneral"; }
 </style>
-
-<script type="text/javascript">
-    $(function() {          
-        $("img").lazyload();
-
-      });
-    
-</script>
-
 {% endblock %}
 
 {% block content %}
@@ -61,12 +52,12 @@
 
     <div class="gallery twelve columns">
 
-        {% for user in users|slice:":10" %}
+        {% for user in users %}
             {% if user.pics.0.image_url %}
                 <a href="/{{ user.username }}">
                     <div class="photo-thumb">
                         <div class="name">{{ user.fullname }}</div>
-                        <img src="{{ user.pics.0.image_url }}" />
+                        <img src="{{ user.pics.0.image_url }}" class="lazy" />
                      </div>
                  </a>
             {% endif %}
