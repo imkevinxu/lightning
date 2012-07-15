@@ -35,3 +35,4 @@ class UserProfile(models.Model):
     facebook = models.URLField(blank=True, null=True)
     fhp_affection = models.IntegerField(blank=True, null=True)
     fhp_photos_count = models.IntegerField(blank=True, null=True)
+    profilepic = models.URLField(blank=True, null=True)
