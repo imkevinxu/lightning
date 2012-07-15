@@ -312,6 +312,7 @@ label.checkbox:hover span.checkbox {
     overflow: hidden;
     margin-right: 10px;
     margin-bottom: 20px;
+    position: relative;
 }
 
 .gallery img {
@@ -334,7 +335,18 @@ label.checkbox:hover span.checkbox {
     padding-left:12px;
     position:absolute;
     color: white;
+    bottom: 0;
+    font-weight: bold;
 }
+
+.gallery .photo-thumb:hover .name {
+    height: 50px;
+    color: #2BA6CB;
+    -webkit-transition-duration: 300ms;
+    -webkit-transition-timing-function: ease;
+}
+
+
 
 
 .reg-container {
