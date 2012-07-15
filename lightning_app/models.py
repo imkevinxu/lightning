@@ -36,6 +36,7 @@ class UserProfile(models.Model):
     fhp_affection = models.IntegerField(blank=True, null=True)
     fhp_photos_count = models.IntegerField(blank=True, null=True)
     profilepic = models.URLField(blank=True, null=True)
+    phone = models.CharField(max_length=20,blank=True, null=True)
 
     @staticmethod
     def createUser(user, email=None, password=None):
