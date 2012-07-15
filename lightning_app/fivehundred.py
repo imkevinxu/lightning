@@ -25,20 +25,18 @@ class FiveHundredPx:
         self.consumer_key = consumer_key
 
     def request(self, path, args=None, post_args=None):
-        
         if not args: args = {}
         if self.consumer_key:
             if post_args is not None:
                 post_args["consumer_key"] = self.consumer_key
             else:
                 args["consumer_key"] = self.consumer_key
-        
+
         post_data = None if post_args is None else urllib.urlencode(post_args)
-        
+        print FiveHundredPx.BASE_URL + path + "?" + urllib.urlencode(args)
         try:
             file_resp = urllib.urlopen(FiveHundredPx.BASE_URL + path + "?" +
                               urllib.urlencode(args), post_data)
-        
             response = _parse_json(file_resp.read())
         finally:
             file_resp.close()
@@ -47,15 +45,12 @@ class FiveHundredPx:
 
     def get_photos(self, feature='editors', limit=200):
         args = {"feature": feature}
-        
         data = self.request('/photos', args)
         total_pages = data['total_pages']
+        page = data['current_page']
         count = 0
         
-        page = data['current_page']
-        
         while page <= total_pages:
-        
             for p in data['photos']:
                 count = count+1
                 if count > limit: return
@@ -66,6 +61,11 @@ class FiveHundredPx:
             
     def get_photo(self, id, args = None):
         data = self.request('/photos/%d' % id, args)
+        return data
+            
+    def get_user_photos(self, username, args = None):
+        data = self.request('/%s' % username, args)
+        print data
         return data
         
         
