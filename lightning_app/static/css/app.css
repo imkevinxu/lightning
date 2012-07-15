@@ -40,17 +40,11 @@ body {
     display: inline-block;
     padding: 0 15px;
     text-align: center;
+    float: right;
 }
 
 .top-bar #right-nav a:hover {
     background-color: #2BB879;
-}
-
-.top-bar #profile {
-    background-color: #2696AF;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
 }
 
 #camera-icon {
@@ -262,6 +256,10 @@ label.checkbox:hover span.checkbox {
   height:203px;
   padding:10px;
   background-color:#ffffff;
+}
+
+.registration {
+    margin-top: 50px !important;
 }
 
 /* SEARCH PAGE   */
