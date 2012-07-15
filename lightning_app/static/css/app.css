@@ -14,6 +14,10 @@ body {
     text-align: center;
 }
 
+.clear {
+    clear: both;
+}
+
 /* Top nav bar stylings */
 .top-bar { 
     -moz-box-shadow:    0px 0px 10px 0px rgba(0,0,0,0.7);
@@ -115,25 +119,22 @@ body {
     position:relative;
 }
 
+.profile {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+}
+
 .profile-container {
     background:url("../images/gif.gif");
     width:100%;
     border-top:solid 1px white;
     -moz-box-shadow: 0 0 5px 2px #888;
-       -webkit-box-shadow: 0 0 5px 2px #888;
-       box-shadow:  0 0 5px 2px #888;
-}
-
-.name-container {
-    margin-right: auto;
-    margin-left:auto;
-    width:700px;
-    min-height:400px;
+    -webkit-box-shadow: 0 0 5px 2px #888;
+    box-shadow:  0 0 5px 2px #888;
 }
 
 .propic {
     z-index:100 !important;
-    margin-top:20px;
     height:140px;
     width:140px;
     background:white;
@@ -143,6 +144,7 @@ body {
     -webkit-box-shadow:inset 1px 1px 3px rgba(0, 0, 0, 0.4);
     box-shadow:inset 1px 1px 3px rgba(0, 0, 0, 0.4);
     moz-box-shadow:inset 1px 1px 3px rgba(0, 0, 0, 0.4);
+    float: left;
 }
 
 .propic img {    
@@ -154,19 +156,13 @@ body {
     
 }
 
-.user-information {
-    font-style:"museo-slab", sans-serif;
-    
+.profile_info {
+    float: right;
 }
 
 #name {
     font-weight:bold;
     font-size:36px;
-}
-
-.name-information {
-    margin-left:170px;
-    margin-top:-130px;
 }
 
 .info {

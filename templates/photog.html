@@ -1,61 +1,62 @@
-{% extends "base_profile.html" %}
+{% extends "base.html" %}
 <!-- Copy and Paste this for every html file. -->
-{% block title %}{{ user.get_profile.fullname }} | Lightning{% endblock %}
+{% block title %}{{ user.fullname }} | Lightning{% endblock %}
 {% block meta_description %}{% endblock %}
 
 {% block extra_head %}
 <script src='/static/js/modal.js'></script>
 {% endblock %}
 
-{% block content %}
+{% block outside_content %}
 
-<div class="portfolio-container">
-	<div class="portfolio">
-	{% for photo in photos %}
-		<div class="portfolio-image">
-			<img src="{{ photo.image_url }}" width="{{ photo.width }}" height="{{ photo.height }}" />
-		</div>
-	{% endfor %}
-	</div>
-</div>
+<!-- <div class="portfolio-container">
+    <div class="portfolio">
+        {% for photo in photos %}
+            <div class="portfolio-image">
+                <img src="{{ photo.image_url }}" width="{{ photo.width }}" height="{{ photo.height }}" />
+            </div>
+        {% endfor %}
+    </div>
+</div> -->
 
 <div class="profile-container">
-  
-  <div class="name-container">
-    <div class="propic">
-      <img src="{{ user.profilepic }}">
-    </div>
-    <div id="user-information">
-      <div class="name-information">
-        <span id="name">{{ user.fullname }}</span><br />
-        <span class="info">Specializes in <span class="tag">families</span>, <span class="tag">weddings</span>, <span class="tag">special events</span></span><br />
-        <span class="info">Located in <span class="tag">{{ user.location }}</span></span>
-        <div class="quote">
-            <p>I started my journey in photography when my dad gave me his Nikon SLR (the F-501) to use for high school yearbook. It allowed me to capture the moments that others on the team missed. These days, I primarily shoot with my trusty Canon EOS 5D Mark II digital SLR. The technology is changing so fast, enabling us to see the world through the lens in new ways each day. I can’t wait to see what’s just around the corner!</p>
+    <div class="row">
+        <div class="ten columns centered profile">
+            <div class="propic">
+                <img src="{{ user.profilepic }}">
+            </div>
+            <div class="profile_info">
+                <h3 id="name">{{ user.fullname }}</h3>
+
+                <span class="info">Specializes in <span class="tag">families</span>, <span class="tag">weddings</span>, <span class="tag">special events</span></span><br />
+
+                <span class="info">Located in <span class="tag">{{ user.location }}</span></span>
+
+                <div class="quote">
+                    <p>I started my journey in photography when my dad gave me his Nikon SLR (the F-501) to use for high school yearbook. It allowed me to capture the moments that others on the team missed. These days, I primarily shoot with my trusty Canon EOS 5D Mark II digital SLR. The technology is changing so fast, enabling us to see the world through the lens in new ways each day. I can’t wait to see what’s just around the corner!</p>
+                </div>
+
+                <a href="#booking" name="modal" class="success button" id="contact-button">Contact Me</a>
+            </div>
+            <div class="clear"></div>
         </div>
-        <a href="#booking" name="modal" class="success button" id="contact-button">Contact Me</a>
-        
-      </div>
     </div>
 </div>
     
 <div id="boxes">
 
-<div id="booking" class="window">
-  <h1>Book</h1>
-    <form method="post" class="nice">{% csrf_token %}
-        <input type="text" name="email" placeholder="Email Address"/>
-        <input type="phone" name="phone" placeholder="Phone Number"/>
-        <input type="submit" name="submit" value="Contact!" class="button"/>
-    </form>
- 
+        <div id="booking" class="window">
+          <h1>Book</h1>
+            <form method="post" class="nice">{% csrf_token %}
+                <input type="text" name="email" placeholder="Email Address"/>
+                <input type="phone" name="phone" placeholder="Phone Number"/>
+                <input type="submit" name="submit" value="Contact!" class="button"/>
+            </form>
+        </div>
+         
+    <!-- Mask to cover the whole screen -->
+    <div id="mask"></div>
 </div>
- 
-<!-- Mask to cover the whole screen -->
-  <div id="mask"></div>
-</div>
-
-
 
 {% endblock %}
 
