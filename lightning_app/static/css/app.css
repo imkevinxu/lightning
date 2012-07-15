@@ -119,27 +119,44 @@ ul, ol { font-size: 14px; line-height: 1.6; margin-bottom: 17px; list-style-posi
     overflow:hidden;
 }
 
-.portfolio-container img {
-    max-height:500px;
+.portfolio-container .portfolio {
+    height:500px;
+    width:100%;
+    margin:0;
+    padding:0;
+    position:relative;
+    overflow:hidden;
+}
+
+.portfolio-container .portfolio .portfolio-image {
+    margin:0;
+    padding:0;
+    height:500px;
+    float:left;
+    position:relative;
+}
+
+.profile-container {
+    background:url("../images/noisepattern.png");
+    width:100%;
+    border-top:solid 1px white;
+    -moz-box-shadow: 0 0 5px 2px #888;
+       -webkit-box-shadow: 0 0 5px 2px #888;
+       box-shadow:  0 0 5px 2px #888;
 }
 
 .name-container {
-    background:url("../images/noisepattern.png");
-    width:100%;
-    z-index:5;
-    -moz-box-shadow: 0 0 5px 2px #888;
-    -webkit-box-shadow: 0 0 5px 2px #888;
-    box-shadow:  0 0 5px 2px #888;
+    margin-right: auto;
+    margin-left:auto;
+    width:700px;
     min-height:400px;
 }
 
 .propic {
     z-index:100 !important;
-    position:absolute;
-    margin:40px;
     margin-top:20px;
-    height:220px;
-    width:220px;
+    height:140px;
+    width:140px;
     background:white;
     -webkit-border-radius:3px;
     border-radius:3px;
@@ -150,17 +167,15 @@ ul, ol { font-size: 14px; line-height: 1.6; margin-bottom: 17px; list-style-posi
 }
 
 .propic img {    
-    height:95%;
+    height:97%;
     margin-left:auto;
     margin-right:auto;
-    padding-top:11px;
+    padding-top:7px;
     display:block;
     
 }
 
-#name-information {
-    margin-left:280px;
-    padding-top:30px;
+.user-information {
     font-style:"museo-slab", sans-serif;
     
 }
@@ -168,6 +183,11 @@ ul, ol { font-size: 14px; line-height: 1.6; margin-bottom: 17px; list-style-posi
 #name {
     font-weight:bold;
     font-size:44px;
+}
+
+.name-information {
+    margin-left:170px;
+    margin-top:-130px;
 }
 
 .info {
