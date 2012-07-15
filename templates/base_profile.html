@@ -42,34 +42,31 @@
 <body>
 
     {# Content #}
-    <div class="container top-bar home-border">
-        <div class="attached">
-            <ul class="right">
-                <li class="active">
-                    <a href="{% url search %}">Explore</a>
-                </li>
+     <div class="container top-bar home-border">
+          <div class="attached">
+              <ul class="right">
+                  <li class="active">
+                      <a href="{% url search %}">Explore</a>
+                  </li>
 
-                {% if user.is_authenticated %}
-                    <li>
-                        <a href="{% url reg1 %}" id="join">{{ user.get_profile.fullname }}</a>
-                    </li>
-                {% else %}
-                    <li>
-                        <a href="{% url reg1 %}" id="join">Join as a photographer</a>
-                    </li>
-                {% endif %}
-            </ul>
-        </div>
-    </div>
+                  {% if user.is_authenticated %}
+                      <li>
+                          <a href="{% url reg1 %}" id="join">{{ user.get_profile.fullname }}</a>
+                      </li>
+                  {% else %}
+                      <li>
+                          <a href="{% url reg1 %}" id="join">Join as a photographer</a>
+                      </li>
+                  {% endif %}
+              </ul>
+          </div>
+      </div>
     
-    <div class="row">
-        <div class="twelve columns">
-
+   
             <!--Block Content-->
             {% block content %}{% endblock %}
             <!--End Block-->
 
-        </div>
     </div>
 
 

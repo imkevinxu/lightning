@@ -69,6 +69,7 @@ class UserProfile(models.Model):
         if "http://" not in user['userpic_url']:
             photographer.profilepic = 'http://500px.com%s' % user['userpic_url']
         photographer.save()
+        return photographer
 
 class Photo(models.Model):
     user = models.ForeignKey(UserProfile)
