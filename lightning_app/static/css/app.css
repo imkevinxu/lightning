@@ -3,10 +3,7 @@
 body {
     color:#1E1E1F;
     font-family:"museo-sans", sans-serif;
-}
-
-.container {
-    width:100%;
+    background: url(http://subtlepatterns.com/patterns/white_wall.png);
 }
 
 .right {
@@ -48,7 +45,6 @@ body {
 .top-bar #right-nav a:hover {
     background-color: #2BB879;
 }
-
 
 .top-bar #profile {
     background-color: #2696AF;
