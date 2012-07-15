@@ -39,7 +39,7 @@ class UserProfile(models.Model):
     phone = models.CharField(max_length=20,blank=True, null=True)
 
     @staticmethod
-    def createUser(user, email=None, password=None):
+    def createUser(user, email=None, password=None, tag=None):
         username = user['username']
 
         baseUser = User.objects.create_user(username, email, password)
@@ -69,6 +69,14 @@ class UserProfile(models.Model):
         photographer.profilepic = user['userpic_url']
         if "http://" not in user['userpic_url']:
             photographer.profilepic = 'http://500px.com%s' % user['userpic_url']
+
+        if tag is not None:
+            tag_tuple = Tag.objects.get_or_create(tagname=tag)
+            tagged_users = tag_tuple[0].user.all()
+            if photographer not in tagged_users:
+                tag_tuple[0].user.add(photographer)
+            tag_tuple[0].save()
+
         photographer.save()
         return photographer
 
