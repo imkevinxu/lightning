@@ -275,3 +275,16 @@ label.checkbox:hover span.checkbox {
 .gallery .photo-thumb:hover div.name{color:#3589A7}
 
 div.name {font-family:"museo-sans", "Helvetica Neue", Arial,sans-serif, sans-serif; text-align:left; font-size:14px;text-shadow:rgba(0, 0, 0, 0.9); background-color:rgba(0, 0, 0, 0.65);width: 300px; height: 40px; padding-top:12px; padding-left:12px; margin-left: 10px; margin-right:12px; position:absolute;}
+
+
+.reg-container {
+    background-color: rgba(0, 0, 0, 0.65);
+    margin-left:300px;
+    margin-top:100px;
+    height:500px;
+    width:400px;
+    padding:30px;
+}
+
+
+
