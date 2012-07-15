@@ -7,7 +7,16 @@
 
 {% block content %}
 
+    <a href="/create">Join as a photographer</a>
+
     <h1>Project Lightning</h1>
+
+    {% for picture in pictures %}
+        <div style="float: left; width: 240px;">
+            <h3>{{ picture.name }}</h3>
+            <img src="{{ picture.url }}" />
+        </div>
+    {% endfor %}
 
 {% endblock %}
 
