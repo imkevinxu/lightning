@@ -43,20 +43,22 @@
 
     {# Content #}
     <div class="top-bar">
-            <div class="row">
-                <div class="two columnns">
-                    <a href="{% url index %}" id="logo" class="left">Lightning</a>
-                </div>
-                <div class="four columns offset-by-two">
-                </div>
-                <div class="four columns" id="right-nav">
-                        <a href="/">Explore</a>
+        <div class="row">
+            <div class="two columnns">
+                <a href="{% url index %}" id="logo" class="left">Lightning</a>
+            </div>
+            <div class="four columns offset-by-two">
+            </div>
+            <div class="four columns" id="right-nav">
+                    {% if not registration %}
                         {% if user.is_authenticated %}
-                            <a href="{% url reg1 %}">{{ user.get_profile.fullname }}</a>
+                            <a href="{% url reg1 %}" id="profile">{{ user.get_profile.fullname }}</a>
                         {% else %}
-                            <a href="{% url reg1 %}">Join as a photographer</a>
+                            <a href="{% url reg1 %}" id="join">Join as a photographer</a>
                         {% endif %}
-                </div>
+                    {% endif %}
+                    <a href="{% url index %}">Explore</a>
+            </div>
         </div>
     </div>
     

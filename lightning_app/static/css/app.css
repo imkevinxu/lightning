@@ -3,14 +3,15 @@
 body {
     color:#1E1E1F;
     font-family:"museo-sans", sans-serif;
-}
-
-.container {
-    width:100%;
+    background: url(http://subtlepatterns.com/patterns/white_wall.png);
 }
 
 .right {
     float:right;
+}
+
+.center {
+    text-align: center;
 }
 
 /* Top nav bar stylings */
@@ -43,18 +44,11 @@ body {
     display: inline-block;
     padding: 0 15px;
     text-align: center;
+    float: right;
 }
 
 .top-bar #right-nav a:hover {
     background-color: #2BB879;
-}
-
-
-.top-bar #profile {
-    background-color: #2696AF;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
 }
 
 #camera-icon {
@@ -266,6 +260,19 @@ label.checkbox:hover span.checkbox {
   height:203px;
   padding:10px;
   background-color:#ffffff;
+}
+
+.registration {
+    margin-top: 50px !important;
+}
+
+.registration #reg1 input {
+    line-height: 36px;
+    font-size: 24px;
+}
+
+.registration #reg1 input[type=text], .registration #reg1 input[type=password] {
+    height: 50px;
 }
 
 /* SEARCH PAGE   */

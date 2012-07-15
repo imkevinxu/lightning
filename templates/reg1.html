@@ -7,12 +7,17 @@
 
 {% block content %}
 
-    <h1>Welcome awesome photographer!</h1>
-    <form action="{% url reg2 %}" method="post" id="reg1">{% csrf_token %} 
-        <input type="text" name="email" placeholder="Email Address"/>
-        <input type="password" name="password" placeholder="Password"/>
-        <input type="submit" name="submit" value="Create Account" class="button"/>
-    </form>
+    <div class="registration seven columns centered">
+        <h1>Join as a photographer</h1>
+
+        <form action="{% url reg2 %}" method="post" id="reg1">{% csrf_token %} 
+            <input type="text" name="email" placeholder="Email Address"/>
+            <input type="password" name="password" placeholder="Password"/>
+            <center>
+            <input type="submit" name="submit" value="Create Account" class="button"/>
+            </center>
+        </form>
+    </div>
 
 {% endblock %}
 
