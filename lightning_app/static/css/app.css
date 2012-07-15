@@ -203,3 +203,21 @@ ul, ol { font-size: 14px; line-height: 1.6; margin-bottom: 17px; list-style-posi
 form#reg2 #profilepic {
     width: 250px;
 }
+
+label.checkbox {
+    display: inline-block;
+    padding-top: 5px;
+    padding-right: 10px;
+}
+
+label.checkbox span.checkbox {
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+}
+
+label.checkbox:hover span.checkbox {
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    border: 1px solid rgba(81, 203, 238, 1);
+}

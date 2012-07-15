@@ -8,7 +8,7 @@
 {% block content %}
 
     <h1>Thanks for signing up {{ photographer.fullname }}</h1>
-    <form action="{% url reg3 %}" method="post" id="reg2">{% csrf_token %}
+    <form action="{% url reg3 %}" method="post" id="reg2" class="custom">{% csrf_token %}
         <div class="row">
             <div class="eight columns">
                 <div class="two mobile-one columns">
@@ -49,8 +49,22 @@
                 <div class="two mobile-one columns">
                     <label class="right inline">Tags:</label>
                 </div>
+
                 <div class="ten mobile-three columns">
-                    <input type="text" name="tags" placeholder="nature, portrait, wedding" class="nine"/>
+                    <label for="checkbox1" class="checkbox">
+                       <input type="checkbox" id="checkbox1" style="display: none;">
+                        <span class="custom checkbox"></span> Nature
+                    </label>
+
+                    <label for="checkbox2" class="checkbox">
+                        <input type="checkbox" id="checkbox2" style="display: none;">
+                        <span class="custom checkbox"></span> Portrait
+                    </label>
+
+                    <label for="checkbox3" class="checkbox">
+                        <input type="checkbox" id="checkbox3" style="display: none;">
+                        <span class="custom checkbox"></span> Wedding
+                    </label>
                 </div>
             </div>
 
