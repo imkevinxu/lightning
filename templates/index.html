@@ -37,7 +37,7 @@
 
 {% for user in users %}
      <div class="photo-thumb">
-          <a href="#"><img src="{{ user.pics.0.image_url }}" /></a>
+          <a href="/{{ user.username }}"><img src="{{ user.pics.0.image_url }}" /></a>
           <div class="name">{{ user.fullname }}</div></li>
      </div>
 {% endfor %}
