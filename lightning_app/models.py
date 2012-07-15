@@ -41,8 +41,6 @@ class UserProfile(models.Model):
     def createUser(user, email=None, password=None):
         username = user['username']
 
-        print username
-
         baseUser = User.objects.create_user(username, email, password)
         photographer = UserProfile.objects.create(user=baseUser)
         photographer.is_photographer = True
@@ -51,7 +49,7 @@ class UserProfile(models.Model):
         photographer.lastname = user['lastname']
         photographer.fullname = user['fullname']
         location = filter(None, [user["city"], user["state"], user["country"]])
-        location = ",".join(location)
+        location = ", ".join(location)
         photographer.location = location
         photographer.fhp_about = user['about']
         photographer.fhp_domain = user['domain']
