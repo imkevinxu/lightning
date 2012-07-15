@@ -1,61 +1,114 @@
-{% extends "base_profile.html" %}
+{% extends "base.html" %}
 <!-- Copy and Paste this for every html file. -->
-{% block title %}{% endblock %}
+{% block title %}{{ user.fullname }} | Lightning{% endblock %}
 {% block meta_description %}{% endblock %}
 
 {% block extra_head %}
-<script src='/static/js/modal.js'></script>
+<style type="text/css">
+    @font-face {
+      font-family: 'FoundationIconsGeneral';
+      src: url('{{ STATIC_URL }}fonts/foundation-icons-general.eot');
+      src: url('{{ STATIC_URL }}fonts/foundation-icons-general.eot?#iefix') format('embedded-opentype'),
+           url('{{ STATIC_URL }}fonts/foundation-icons-general.woff') format('woff'),
+           url('{{ STATIC_URL }}fonts/foundation-icons-general.ttf') format('truetype'),
+           url('{{ STATIC_URL }}fonts/foundation-icons-general.svg#FoundationIconsGeneral') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+        font-family: 'FoundationIconsSocial';
+        src: url('{{ STATIC_URL }}fonts/foundation-icons-social.eot');
+        src: url('{{ STATIC_URL }}fonts/foundation-icons-social.eot?#iefix') format('embedded-opentype'),
+             url('{{ STATIC_URL }}fonts/foundation-icons-social.woff') format('woff'),
+             url('{{ STATIC_URL }}fonts/foundation-icons-social.ttf') format('truetype'),
+             url('{{ STATIC_URL }}fonts/foundation-icons-social.svg#FoundationIconsSocial') format('svg');
+        font-weight: normal;
+        font-style: normal;
+
+    }
+
+    /* CSS to style glyphs */
+    .glyph { cursor: finger; font-size: 44px; line-height: 1; padding-right: 8px; }
+    .glyph.general { font-family: "FoundationIconsGeneral"; }
+    .glyph.social { font-family: "FoundationIconsSocial"; }
+    </style>
+
 {% endblock %}
 
-{% block content %}
+{% block outside_content %}
 
-<div class="portfolio-container">
-	<div class="portfolio">
-	{% for photo in photos %}
-		<div class="portfolio-image">
-			<img src="{{ photo.image_url }}" width="{{ photo.width }}" height="{{ photo.height }}" />
-		</div>
-	{% endfor %}
-	</div>
-</div>
+<!-- <div class="portfolio-container">
+    <div class="portfolio">
+        {% for photo in photos %}
+            <div class="portfolio-image">
+                <img src="{{ photo.image_url }}" width="{{ photo.width }}" height="{{ photo.height }}" />
+            </div>
+        {% endfor %}
+    </div>
+</div> -->
 
 <div class="profile-container">
-  
-  <div class="name-container">
-    <div class="propic">
-      <img src="{{ user.profilepic }}">
-    </div>
-    <div id="user-information">
-      <div class="name-information">
-        <span id="name">{{ user.fullname }}</span><br />
-        <span class="info">Specializes in <span class="tag">families</span>, <span class="tag">weddings</span>, <span class="tag">special events</span></span><br />
-        <span class="info">Located in <span class="tag">{{ user.location }}</span></span>
-        <div class="quote">
-            <p>I started my journey in photography when my dad gave me his Nikon SLR (the F-501) to use for high school yearbook. It allowed me to capture the moments that others on the team missed. These days, I primarily shoot with my trusty Canon EOS 5D Mark II digital SLR. The technology is changing so fast, enabling us to see the world through the lens in new ways each day. I can’t wait to see what’s just around the corner!</p>
+    <div class="row">
+        <div class="ten columns centered profile">
+            <div class="two columns">
+                <div class="propic">
+                    <img src="{{ user.profilepic }}">
+                </div>
+                <div class="clear"></div>
+
+                <a href="#booking" name="modal" class="success button" data-reveal-id="contact-modal" id="contact-button">Contact Me</a>
+            </div>
+
+            <div class="ten columns">
+                <div class="profile_info">
+                    <h3 id="name">{{ user.fullname }}</h3>
+
+                    <span class="info">Specializes in
+                        {% for tag in tags %}
+                            <span class="tag">{{ tag }}</span>{% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    </span>
+
+                    <span class="info">Located in <span class="tag">{{ user.location }}</span></span>
+
+                    <p class="quote">{{ user.fhp_about }}</p>
+
+                    {% if user.website %}
+                        <a href="http://{{ user.website }}" target="_blank"><span class="glyph general">m</span></a>
+                    {% endif %}
+                    {% if user.facebookpage %}
+                        <a href="http://{{ user.facebookpage }}" target="_blank"><span class="glyph social">d</span></a>
+                    {% endif %}
+                    {% if user.twitter %}
+                        <a href="http://twitter.com/{{ user.twitter }}" target="_blank"><span class="glyph social">e</span></a>
+                    {% endif %}
+                    {% if user.flickr %}
+                        <a href="http://www.flickr.com/photos/{{ user.flickr }}" target="_blank"><span class="glyph social">o</span></a>
+                    {% endif %}
+
+                    <span class="glyph general" style="color:#D41616">b</span><span style="font-size:48px; font-family: Helvetica">{{ user.fhp_affection }}</span>
+
+                </div>
+            </div>
+
+            <div class="clear"></div>
         </div>
-        <a href="#booking" name="modal" class="success button" id="contact-button">Contact Me</a>
-        
-      </div>
     </div>
 </div>
-    
-<div id="boxes">
 
-<div id="booking" class="window">
-  <h1>Book</h1>
-    <form method="post" class="nice">{% csrf_token %}
+<div id="contact-modal" class="reveal-modal">
+    <h2>Get in touch</h2>
+    <p class="lead">Your professional photographer is only a few texts away</p>
+
+    <form method="">{% csrf_token %}
         <input type="text" name="email" placeholder="Email Address"/>
-        <input type="phone" name="phone" placeholder="Phone Number"/>
-        <input type="submit" name="submit" value="Contact!" class="button"/>
+        <input type="text" name="phone" placeholder="Phone Number"/>
+        <center>
+            <input type="submit" name="submit" value="Contact Me" class="success button"/>
+        </center>
     </form>
- 
+    <a class="close-reveal-modal">&#215;</a>
 </div>
- 
-<!-- Mask to cover the whole screen -->
-  <div id="mask"></div>
-</div>
-
-
 
 {% endblock %}
 
