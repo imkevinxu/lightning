@@ -97,21 +97,29 @@ body {
 
 .portfolio-container {
     height:455px;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    position: relative;
+    z-index:-999;
+
 }
 
 .portfolio-container .portfolio {
     height:500px;
-    width:100%;
-    position:relative;
-    overflow:hidden;
+    overflow: hidden;
+    width: 9999px;
+}
+
+.portfolio-container li {
+    display: inline-block;
+    float: left;
 }
 
 .portfolio-container img {
-    position:relative;
-    left:-45px;
-    top:0px;
-    z-index:-1;
+    z-index:-999;
 }
+
 
 .profile {
     margin-top: 20px !important;
