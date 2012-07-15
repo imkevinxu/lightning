@@ -7,6 +7,43 @@
 
 {% block content %}
 
+<div class = "ten columns">
+
+   <h3>I'm looking for a photographer who specializes in </h3>
+    <form action="{% url reg2 %}" method="post" id="reg1">{% csrf_token %} 
+        
+        <select name="tags">
+			<option selected="selected">anything</option>
+			<option>portraits</option>
+			<option>weddings</option>
+			<option>editorial</option>
+		</select>
+
+        <h3>near</h3>
+       	
+        <select name="city">
+			<option selected="selected">San Francisco</option>
+			<option>portraits</option>
+			<option>weddings</option>
+			<option>editorial</option>
+		</select>
+
+        <input type="submit" name="submit" value="Find my photographer!" class="button"/>
+    </form>
+
+</div>
+
+<div class="gallery">
+
+{% for user in users %}
+     <div class="photo-thumb">
+          <a href="#"><img src="{{ user.pics.0.image_url }}" /></a>
+          <div class="name">{{ user.fullname }}</div></li>
+     </div>
+{% endfor %}
+
+</div>
+
 {% endblock %}
 
 {% block javascript %}{% endblock %}
