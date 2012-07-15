@@ -58,7 +58,7 @@ body {
 }
 
 .top-bar #right-nav a:hover {
-    background-color: #2BB879;
+    background-color: #2BA6CB;
 }
 
 #camera-icon {
@@ -312,7 +312,7 @@ label.checkbox:hover span.checkbox {
     height: 206px;
     overflow: hidden;
     margin-right: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     position: relative;
     background-color:rgba(0, 0, 0, 0.65);
 
@@ -365,6 +365,10 @@ label.checkbox:hover span.checkbox {
     background-color: rgba(0, 0, 0, 0.80);
     padding: 20px 30px;
     margin-top: 30px;
+
+    -moz-box-shadow: 1px 1px 3px #888;
+    -webkit-box-shadow: 1px 1px 3px #888;
+    box-shadow: 1px 1px 3px #888;
 }
 
 .search-container #search select {

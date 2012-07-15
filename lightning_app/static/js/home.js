@@ -20,7 +20,14 @@ $(function() {
 					'image_url': item.pics[0].image_url
 				});
 
-				$('#gallery').append(output);
+				var elem = $('<a></a>').attr("href", "/"+item.username)
+					    .append($('<div></div>').addClass("photo-thumb")
+					    	.append($('<div></div>').addClass("name").html(item.fullname))
+					    	.append($('<img></img>').attr("src", item.pics[0].image_url))
+					   	);
+				console.log(elem);
+
+				$('#gallery').prepend(elem);
 			}
 		});
 
