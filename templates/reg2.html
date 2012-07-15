@@ -8,11 +8,56 @@
 {% block content %}
 
     <h1>Thanks for signing up {{ photographer.fullname }}</h1>
-    <form action="{% url reg3 %}" method="post" class="nice">{% csrf_token %} 
-        <input type="text" name="location" value="{{ photographer.location }}"/>
-        <input type="text" name="email" placeholder="Email Address"/>
-        <input type="text" name="email" placeholder="Email Address"/>
-        <input type="text" name="email" placeholder="Email Address"/>
+    <form action="{% url reg3 %}" method="post" id="reg2">{% csrf_token %}
+        <div class="row">
+            <div class="eight columns">
+                <div class="two mobile-one columns">
+                    <label class="right inline">Full Name:</label>
+                </div>
+                <div class="ten mobile-three columns">
+                    <input type="text" name="fullname" value="{{ photographer.fullname }}" class="nine"/>
+                </div>
+
+                <div class="two mobile-one columns">
+                    <label class="right inline">Location:</label>
+                </div>
+                <div class="ten mobile-three columns">
+                    <input type="text" name="location" value="{{ photographer.location }}" class="nine"/>
+                </div>
+
+                <div class="two mobile-one columns">
+                    <label class="right inline">Website:</label>
+                </div>
+                <div class="ten mobile-three columns">
+                    <input type="text" name="website" value="{{ photographer.website }}" class="nine"/>
+                </div>
+
+                <div class="two mobile-one columns">
+                    <label class="right inline">About Me:</label>
+                </div>
+                <div class="ten mobile-three columns">
+                    <input type="text" name="about" value="{{ photographer.fhp_about }}" placeholder="Aperture is my middle name" class="nine"/>
+                </div>
+
+                <div class="two mobile-one columns">
+                    <label class="right inline">Phone:</label>
+                </div>
+                <div class="ten mobile-three columns">
+                    <input type="text" name="phone" placeholder="888-555-5555" class="nine"/>
+                </div>
+
+                <div class="two mobile-one columns">
+                    <label class="right inline">Tags:</label>
+                </div>
+                <div class="ten mobile-three columns">
+                    <input type="text" name="tags" placeholder="nature, portrait, wedding" class="nine"/>
+                </div>
+            </div>
+
+            <div class="four columns">
+                <img src="{{ photographer.profilepic }}" id="profilepic"/>
+            </div>
+        </div>
         <input type="submit" name="submit" value="Save Changes" class="button"/>
     </form>
 

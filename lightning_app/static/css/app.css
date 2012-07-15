@@ -1,2 +1,5 @@
 /* Custom lightning_app CSS  */
 
+form#reg2 #profilepic {
+    width: 250px;
+}
