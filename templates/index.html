@@ -32,10 +32,13 @@
                 <h2 class ="white" style="display: inline;line-height:140%">I'm looking for a photographer who specializes in</h2>
                     <select id="tags" name="tags">
                         <option selected="selected" value="anything"></option>
-                        <option value="anything">anything</option>
-                        <option value="portraits">portraits</option>
-                        <option value="weddings">weddings</option>
-                        <option value="editorial">editorial</option>
+
+	                    {% if tags %}
+                        {% for tag in tags %}
+	                        <option value="{{ tag }}">{{ tag }}</option>
+                        {% endfor %}
+	                    {% endif %}
+
                     </select>
 
                 <h2 class="white" style="display:inline; margin-right:10px; margin-left: 10px;">near</h2>
@@ -50,7 +53,7 @@
         </div>
     </div>
 
-    <div class="gallery twelve columns">
+    <div id="gallery" class="twelve columns">
 
         {% for user in users %}
             {% if user.pics.0.image_url %}
@@ -69,8 +72,8 @@
 
 <script type="text/x-handlebars-template" id="photo-thumb-template">
      <div class="photo-thumb">
-          <a href="/{{ username }}"><img src="{{ image_url }}" /></a>
-          <div class="name">{{ fullname }}</div></li>
+          <a href="/{{username}}"><img src="{{image_url}}" /></a>
+          <div class="name">{{fullname}}</div></li>
      </div>
 </script>
 

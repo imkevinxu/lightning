@@ -3,10 +3,8 @@ $(function() {
 	var photo_thumb = $('#photo-thumb-template').html(),
 		template = Handlebars.compile(photo_thumb);
 
-	console.log(photo_thumb);
-
 	$('#find-photographer').click(function() {
-		$.get('/users', function(data) {
+		$.get('/users/'+$('#tags').val(), function(data) {
 			$('#gallery').empty();
 
 			for (var i=0, j=data.length; i<j; i++) {
@@ -25,7 +23,6 @@ $(function() {
 					    	.append($('<div></div>').addClass("name").html(item.fullname))
 					    	.append($('<img></img>').attr("src", item.pics[0].image_url))
 					   	);
-				console.log(elem);
 
 				$('#gallery').prepend(elem);
 			}

@@ -302,11 +302,11 @@ label.checkbox:hover span.checkbox {
     margin-top: 20px;
 }
 
-.gallery  {
+#gallery  {
     margin-top: 40px;
 }
 
-.gallery .photo-thumb {
+#gallery .photo-thumb {
     float: left;
     display: inline-block;
     height: 206px;
@@ -321,15 +321,15 @@ label.checkbox:hover span.checkbox {
     box-shadow: 1px 1px 3px #888;
 }
 
-.gallery img {
+#gallery img {
     max-width:310px;
     background-color: black;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-.gallery a {text-decoration:none;color:inherit;}
+#gallery a {text-decoration:none;color:inherit;}
 
-.gallery .name {
+#gallery .name {
     font-family:"museo-sans", "Helvetica Neue", Arial,sans-serif, sans-serif;
     text-align:left;
     font-size:14px;
@@ -345,7 +345,7 @@ label.checkbox:hover span.checkbox {
     font-weight: bold;
 }
 
-.gallery .photo-thumb:hover .name {
+#gallery .photo-thumb:hover .name {
     height: 45px;
     color: #2BA6CB;
     -webkit-transition-duration: 300ms;
