@@ -30,6 +30,10 @@ Setup
     pip install -r requirements.txt
     python manage.py syncdb    //only first time
     python manage.py migrate lightning_app
+
+Populating DB with 400 top photographers
+
+    python manage.py populatedb
     
 Deploying to Heroku
 

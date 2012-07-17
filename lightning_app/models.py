@@ -26,7 +26,7 @@ class UserProfile(Base):
     lastname = models.CharField(max_length=255, blank=True, null=True)
     fullname = models.CharField(max_length=255, blank=True, null=True)
     location = models.CharField(max_length=255, blank=True, null=True)
-    fhp_about = models.CharField(max_length=255, blank=True, null=True)
+    fhp_about = models.TextField(blank=True, null=True)
     fhp_domain = models.URLField(blank=True, null=True)
     website = models.URLField(blank=True, null=True)
     twitter = models.URLField(blank=True, null=True)
