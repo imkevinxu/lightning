@@ -15,7 +15,7 @@ class Base(models.Model):
     class Meta:
         abstract = True
 
-class UserProfile(models.Model):
+class UserProfile(Base):
     # This field is required.
     user = models.OneToOneField(User)
 
@@ -37,6 +37,9 @@ class UserProfile(models.Model):
     fhp_photos_count = models.IntegerField(blank=True, null=True)
     profilepic = models.URLField(blank=True, null=True)
     phone = models.CharField(max_length=20,blank=True, null=True)
+
+    def __unicode__(self):
+        return self.fullname
 
     @staticmethod
     def createUser(user, email=None, password=None, tag=None):
@@ -97,6 +100,9 @@ class Photo(models.Model):
     favorites_count = models.IntegerField(blank=True, null=True)
     comments_count = models.IntegerField(blank=True, null=True)
 
+    def __unicode__(self):
+        return "%s ID:%d" % (self.name, self.photo_id) 
+
     @staticmethod
     def createPhoto(user, info):
         photo_id = info['id']
@@ -121,3 +127,6 @@ class Tag(models.Model):
     tagname = models.CharField(max_length=255)
     user = models.ManyToManyField(UserProfile, blank=True, null=True)
     
+    def __unicode__(self):
+        return self.tagname
+
