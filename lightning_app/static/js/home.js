@@ -1,20 +1,14 @@
 $(function() {
 
-	$.fn.digits = function(){ 
-	    return this.each(function(){ 
-	        $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") ); 
-	    })
-	}
-
-	$('#find-photographer').click(function() {
+	$('#find-photographer').on("click", function() {
 		$.get('/users/'+$('#tags').val(), function(data) {
 			$('#gallery').empty();
 
-			count = 51;
+			var count = 51;
 			if (data.length < count) count = data.length;
 
 			for (var i=0, j=count; i<j; i++) {
-				console.log(data[i].username);
+				// console.log(data[i].username);
 
 				var item = data[i];
 				var affection = String(item.fhp_affection).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
@@ -26,7 +20,7 @@ $(function() {
 					    	.append($('<img></img>').attr("src", item.pics[0].image_url))
 					   	);
 
-				$('#gallery').prepend(elem).delay(100);
+				$('#gallery').prepend(elem);
 			}
 		});
 
