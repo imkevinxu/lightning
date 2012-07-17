@@ -141,19 +141,33 @@
 
     <script src="{{ STATIC_URL }}js/jquery.scrollTo-min.js"></script>
     <script type="text/javascript">
+        //So wet, *sigh*
         (function() {
-        	$('.portfolio-container').scrollTo(600, 0);
-            var x = 0;
+          if ($(window).width() < 767) {
+              var x = 0;
 
-            window.setInterval(function(){
-              x += 1;
-              if (x == 8) {
-                  $('.portfolio-container').scrollTo( 0, 1500 );
-                  x = 0;
-              } else {
-              	$('.portfolio-container').scrollTo('+=900px', 800, { axis:'x', easing:'linear' } );
-              }
-            }, 3000);
+              window.setInterval(function(){
+                x += 1;
+                if (x == 9) {
+                    $('.portfolio-container').scrollTo( 0, 1500 );
+                    x = 0;
+                } else {
+                  $('.portfolio-container').scrollTo('+=300px', 800, { axis:'x', easing:'linear' } );
+                }
+              }, 3000);
+          } else {
+              var x = 0;
+
+              window.setInterval(function(){
+                x += 1;
+                if (x == 8) {
+                    $('.portfolio-container').scrollTo( 0, 1500 );
+                    x = 0;
+                } else {
+                	$('.portfolio-container').scrollTo('+=900px', 800, { axis:'x', easing:'linear' } );
+                }
+              }, 3000);
+            }
         })();
     </script>
 

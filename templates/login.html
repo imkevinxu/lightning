@@ -14,7 +14,7 @@
 
         <form class="form" action="{% url login %}" method="post" id="reg1">
             {% csrf_token %}
-            <input id="id_username" type="email" name="username" maxlength="30" placeholder="Email Address">
+            <input id="id_username" type="text" name="username" maxlength="30" placeholder="Username">
             <input type="password" name="password" id="id_password" placeholder="Password">
             <center>
                 <input type="submit" name="submit" value="Log in" class="button"/>

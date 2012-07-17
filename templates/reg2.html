@@ -4,12 +4,12 @@
 {% block meta_description %}{% endblock %}
 
 {% block extra_head %}
-<link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
 {% endblock %}
 
 {% block content %}
 
-    <div class="registration">
+    <div class="registration reg2">
         <h1>Thanks for signing up {{ photographer.fullname }}</h1>
         <form action="{% url reg3 %}" method="post" id="reg2" class="custom">{% csrf_token %}
             <div class="row">
@@ -30,7 +30,7 @@
                     </div>
 
                     <div class="two mobile-one columns">
-                        <label class="right inline">About Me:</label>
+                        <label class="right inline">About:</label>
                     </div>
                     <div class="ten mobile-three columns">
                         <input type="text" name="about" value="{{ photographer.fhp_about }}" placeholder="Aperture is my middle name" class="ten"/>
@@ -93,7 +93,7 @@
 
                 <div class="four columns">
                     <img src="{{ photographer.profilepic }}" id="profilepic"/>
-                    <span style="font-family: 'Permanent Marker', cursive;position: absolute; font-size: 20px; bottom: 20px; right: 158px;">{{ photographer.firstname }}</span>
+                    <span style="font-family: 'Permanent Marker', cursive;position: absolute; font-size: 20px; bottom: 20px; right: 50%; margin-right: -15px;">{{ photographer.firstname }}</span>
                 </div>
             </div>
         </form>

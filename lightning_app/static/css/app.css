@@ -163,7 +163,7 @@ body {
 
 .quote {
     margin-top:10px;
-    width:600px;
+    word-wrap: break-word
     font-style:italic;
     font-size:16px;
 }
@@ -256,6 +256,10 @@ label.checkbox:hover span.checkbox {
     background-color: rgba(0, 0, 0, 0.80);
     padding:40px;
     padding-bottom: 80px;
+}
+
+.registration.reg2 {
+    background-color: inherit !important;
 }
 
 .white {
@@ -417,6 +421,10 @@ footer a {
         font-size: 16px;
     }
 
+    .top-bar #right-nav a.logout {
+        display: none;
+    }
+
     #join:after {
         content: "Join us";
     }
@@ -483,9 +491,29 @@ footer a {
     body#registration {
         background: url("http://i.imgur.com/TABvy.jpg") no-repeat center center fixed;
     }
+
+    .portfolio-container {
+        height:155px;
+    }
+
+    .portfolio-container .portfolio {
+        height:200px;
+    }
+
+    .portfolio-container img {
+        height: 100%;
+    }
+
+    footer {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 1279px) and (min-width: 768px) {
+    .row {
+        width: 90%;
+        max-width: 90%;
+    }
 
     #search-container {
         margin-top: 15px;
