@@ -253,6 +253,9 @@ label.checkbox:hover span.checkbox {
 
 .registration {
     margin-top: 50px !important;
+    background-color: rgba(0, 0, 0, 0.80);
+    padding:40px;
+    padding-bottom: 80px;
 }
 
 .white {
@@ -264,7 +267,9 @@ label.checkbox:hover span.checkbox {
     font-size: 24px;
 }
 
-.registration #reg1 input[type=text], .registration #reg1 input[type=password] {
+.registration #reg1 input[type=text],
+.registration #reg1 input[type=email],
+.registration #reg1 input[type=password] {
     height: 50px;
 }
 
@@ -334,11 +339,7 @@ label.checkbox:hover span.checkbox {
     -webkit-transition-duration: 300ms;
     -webkit-transition-timing-function: ease;
 }
-.reg-container {
-    background-color: rgba(0, 0, 0, 0.80);
-    padding:40px;
-    padding-bottom: 80px;
-}
+
 
 #search-container {
     background-color: rgba(0, 0, 0, 0.80);
@@ -431,6 +432,29 @@ body#registration {
 
     #gallery .photo-thumb {
         margin-bottom: 10px;
+    }
+
+    .registration {
+        margin-top: 10px !important;
+    }
+
+    .registration h1 {
+        font-size: 28px;
+    }
+
+    .registration #reg1 input[type="text"],
+    .registration #reg1 input[type="email"],
+    .registration #reg1 input[type="password"] {
+        height: 36px;
+    }
+
+    .registration #reg1 input {
+        line-height: 26px;
+        font-size: 20px;
+    }
+
+    body#registration {
+        background: url("http://i.imgur.com/TABvy.jpg") no-repeat center center fixed;
     }
 }
 

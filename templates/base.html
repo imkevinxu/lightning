@@ -54,9 +54,10 @@
             <div class="four mobile-two columns" id="right-nav">
                 {% if not registration %}
                     {% if request.user.is_authenticated and not request.user.is_superuser %}
-                        <a href="/logout" id="profile">Logout</a>
+                        <a href="{% url logout %}" id="profile">Logout</a>
                         <a href="/{{ user.username }}" id="profile">{{ request.user.get_profile.fullname }}</a>
                     {% else %}
+                        <a href="{% url login %}" id="profile">Login</a>
                         <a href="{% url reg1 %}" id="join"><!-- Injected by CSS --></a>
                     {% endif %}
                 {% endif %}
