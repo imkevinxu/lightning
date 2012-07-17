@@ -31,7 +31,7 @@ Setup
     python manage.py syncdb    //only first time
     python manage.py migrate lightning_app
 
-Populating DB with 400 top photographers
+Populating DB with top photographers
 
     python manage.py populatedb
     

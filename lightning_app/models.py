@@ -45,11 +45,12 @@ class UserProfile(Base):
     def createUser(user, email=None, password=None, tag=None):
         username = user['username']
 
-        baseUser = User.objects.get_or_create(username=username)
-        if baseUser[1] is 1:
-            baseUser[0].email = email
-            baseUser[0].password = password
-        baseUser[0].save()
+        baseUser = User.objects.get_or_create(username=username) #getting a tuple
+        if baseUser[1] is 1: #if new
+            baseUser[0].email = email #needs email field
+            baseUser[0].password = password #needs password field
+        baseUser[0].save() #saves object
+        
         photographer = UserProfile.objects.get_or_create(user=baseUser[0])[0]
         photographer.is_photographer = True
         photographer.fhp_id = user['id']
