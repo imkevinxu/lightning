@@ -1,7 +1,4 @@
 
-<!-- Copy and pasted html source from live site with amazon s3 links -->
-<!-- Date: July 17, 2012 -->
-
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
@@ -17,6 +14,9 @@
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content="" />
     <meta name="author" content="" />
+
+    
+    
 
     <script type="text/javascript" src="http://use.typekit.com/bqi6jyf.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
@@ -35,37 +35,66 @@
             }
         </style>
     <![endif]-->
+    
+    
+<style type="text/css">
+    @font-face {
+      font-family: 'FoundationIconsGeneral';
+      src: url('http://s3.amazonaws.com/lightning-app/fonts/foundation-icons-general.eot');
+      src: url('http://s3.amazonaws.com/lightning-app/fonts/foundation-icons-general.eot?#iefix') format('embedded-opentype'),
+           url('http://s3.amazonaws.com/lightning-app/fonts/foundation-icons-general.woff') format('woff'),
+           url('http://s3.amazonaws.com/lightning-app/fonts/foundation-icons-general.ttf') format('truetype'),
+           url('http://s3.amazonaws.com/lightning-app/fonts/foundation-icons-general.svg#FoundationIconsGeneral') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+    /* CSS to style glyphs */
+    .glyph { cursor: finger; font-size: 44px; line-height: 1; padding-right: 8px; }
+    .glyph.general { font-family: "FoundationIconsGeneral"; }
+</style>
 
     <script src="http://s3.amazonaws.com/lightning-app/js/modernizr.foundation.js"></script>
 
 </head>
-<body>
+<body id="">
 
+    
     <div class="top-bar">
         <div class="row">
-            <div class="two columnns">
-                <a href="/" id="logo" class="left logo"><span id="lightning"></span> Lightning</a>
+            <div class="three mobile-two columnns" id="logobox">
+  
+                <a href="/" id="logo" class="left logo">
+                    <span id="lightning"></span>Lightning
+                </a>
+
             </div>
-            <div class="four columns offset-by-two">
-            </div>
-            <div class="four columns" id="right-nav">
-                <a href="/reg1" id="profile">Join as a photographer</a>
+            <div class="four mobile-two columns" id="right-nav">
+                
+                    
+                        <a href="/login/" id="profile">Login</a>
+                        <a href="/reg1/" id="join"><!-- Injected by CSS --></a>
+                    
+                
             </div>
         </div>
     </div>
+    
+    
 
     <div class="row">
-        <div class="twelve columns">
-
+        <div class="twelve mobile-four columns">
+            
             <!--Block Content-->
-                <h1>
-                    Scotty, you are so lost...
-                </h1>
+            
+                <h1>Scotty, you are so lost...</h1>
+
             <!--End Block-->
 
         </div>
     </div>
 
+    
+    
     <!--[if lt IE 9]>
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -81,12 +110,14 @@
     
 <script src="http://s3.amazonaws.com/lightning-app/js/handlebars.js"></script>
 <script src="http://s3.amazonaws.com/lightning-app/js/home.js"></script>
-    <!-- <script>
-    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+
+    
+    <script>
+    var _gaq=[['_setAccount','UA-33453354-1''],['_trackPageview']];
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
     g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
     s.parentNode.insertBefore(g,s)}(document,'script'));
-    </script> -->
+    </script>
 
 </body>
 </html>

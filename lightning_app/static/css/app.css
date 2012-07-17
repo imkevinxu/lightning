@@ -47,7 +47,7 @@ body {
 }
 #lightning {
     display: inline-block;
-    background: url(/static/images/icon.png) no-repeat 0 0;
+    background: url(http://s3.amazonaws.com/lightning-app/images/icon.png) no-repeat 0 0;
     height: 40px;
     width: 30px;
     position:relative;
