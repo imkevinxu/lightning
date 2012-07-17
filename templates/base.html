@@ -44,20 +44,20 @@
     {# Content #}
     <div class="top-bar">
         <div class="row">
-            <div class="two columnns">
+            <div class="three mobile-two columnns" id="logobox">
   
-                <a href="{% url index %}" id="logo" class="left logo"><span id="lightning"></span> Lightning</a>
+                <a href="{% url index %}" id="logo" class="left logo">
+                    <span id="lightning"></span>Lightning
+                </a>
 
             </div>
-            <div class="four columns offset-by-two">
-            </div>
-            <div class="four columns" id="right-nav">
+            <div class="four mobile-two columns" id="right-nav">
                 {% if not registration %}
                     {% if request.user.is_authenticated and not request.user.is_superuser %}
                         <a href="/logout" id="profile">Logout</a>
                         <a href="/{{ user.username }}" id="profile">{{ request.user.get_profile.fullname }}</a>
                     {% else %}
-                        <a href="{% url reg1 %}" id="join">Join as a photographer</a>
+                        <a href="{% url reg1 %}" id="join"><!-- Injected by CSS --></a>
                     {% endif %}
                 {% endif %}
             </div>
@@ -67,8 +67,8 @@
     {% block outside_content %}{% endblock %}
 
     <div class="row">
-        <div class="twelve columns">
-
+        <div class="twelve mobile-four columns">
+            
             <!--Block Content-->
             {% block content %}{% endblock %}
             <!--End Block-->

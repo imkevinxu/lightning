@@ -25,11 +25,11 @@
 
 <div class="row">
     <div class="twelve columns">
-        <div class="search-container ten columns">
+        <div id="search-container" class="ten columns">
 
             <form action="/" method="post" id="search">{% csrf_token %} 
 
-                <h2 class ="white" style="display: inline;line-height:140%">I'm looking for a photographer who specializes in</h2>
+                <h2 class ="white" id="search">I'm looking for a photographer who specializes in</h2>
                     <select id="tags" name="tags">
                         <option selected="selected" value="anything"></option>
 
@@ -41,7 +41,7 @@
 
                     </select>
 
-                <h2 class="white" style="display:inline; margin-right:10px; margin-left: 10px;">near</h2>
+                <h2 class="white near" id="search">near</h2>
 
                     <select id="city" name="city">
                         <option selected="selected" value="San Francisco">San Francisco</option>
@@ -53,7 +53,7 @@
         </div>
     </div>
 
-    <div id="gallery" class="twelve columns">
+    <div id="gallery" class="twelve mobile-four columns">
 
         {% for user in users %}
             {% if user.pics.0.image_url %}
