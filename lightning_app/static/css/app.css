@@ -366,10 +366,6 @@ label.checkbox:hover span.checkbox {
     -webkit-transition-duration: 300ms;
     -webkit-transition-timing-function: ease;
 }
-
-
-
-
 .reg-container {
     background-color: rgba(0, 0, 0, 0.80);
     padding:40px;
@@ -411,7 +407,6 @@ label.checkbox:hover span.checkbox {
     font-size: 20px;
 }
 
-
-body#registration { 
-    background: url("http://i.imgur.com/TABvy.jpg") no-repeat center center fixed;
-}*/
+body#registration {
+    background: url("http://i.imgur.com/TABvy.jpg") no-repeat center 0 fixed;
+}
