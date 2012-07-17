@@ -92,7 +92,8 @@
                         <a href="http://www.flickr.com/photos/{{ user.flickr }}" target="_blank"><span class="glyph social">o</span></a>
                     {% endif %}
 
-                    <span class="glyph general" style="color:#D41616">b</span><span style="font-size:48px; font-family: Helvetica">{{ user.fhp_affection }}</span>
+                    {% load humanize %}
+                    <span class="glyph general" style="color:#D41616">b</span><span style="font-size:48px; font-family: Helvetica">{{ user.fhp_affection|intcomma }}</span>
 
                 </div>
             </div>
