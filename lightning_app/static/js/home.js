@@ -1,6 +1,6 @@
 $(function() {
 
-	$('#find-photographer').on("click", function() {
+	$('#tags').on("change", function() {
 		var search_tag = $('#tags').val();
 		$('#gallery').css("opacity", 0.5);
 
