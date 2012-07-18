@@ -2,15 +2,15 @@ $(function() {
 
 	$('#find-photographer').on("click", function() {
 		var search_tag = $('#tags').val();
+		$('#gallery').css("opacity", 0.5);
 
 		$.get('/users/'+search_tag, function(data) {
-			$('#featured_photog').empty();
-
+			var results = $('<div></div>');
 			var count = 51;
 			if (data.length < count) count = data.length;
 
 			for (var i=0, j=count; i<j; i++) {
-				console.log(data[i].username);
+				// console.log(data[i].username);
 
 				var item = data[i];
 				var affection = String(item.fhp_affection).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
@@ -22,11 +22,16 @@ $(function() {
 					    	.append($('<img></img>').attr("src", item.pics[0].image_url))
 					   	);
 
-				$('#featured_photog').prepend(elem);
+				results.append(elem);
 			}
 
 			$('#newest_photog').remove();
-			$('#featured_photog').prepend('<h2>Search for "'+search_tag+'"</h2>');
+			$('#featured_photog').empty();
+
+			$('#featured_photog').append('<h2>Search for "'+search_tag+'"</h2>');
+			$('#featured_photog').append(results);
+			console.log(results);
+			$('#gallery').css("opacity", 1);
 		});
 
 		return false;
