@@ -56,37 +56,37 @@
     {% load humanize %}
     <div id="gallery" class="twelve mobile-four columns">
         <div id="newest_photog">
-          <h2>Newest Photographers</h2>
-          {% for user in recentUsers %}
-            {% if user.pics.0.image_url %}
-              <a href="/{{ user.username }}">
-                <div class="photo-thumb">
-                  <div class="name">{{ user.fullname }}
-                    <span class="right" style="padding-right:10px;margin-top: -4px;"><span class="glyph general" style="font-size: 14px;color:#D41616">b</span>{{ user.fhp_affection|intcomma }}</span>
-                  </div>
-                  <img src="{{ user.pics.0.image_url }}"/>
-                </div>
-              </a>
-            {% endif %}
-          {% endfor %}
+            <h2>Newest Photographers</h2>
+            {% for user in recentUsers %}
+                {% if user.pics.0.image_url %}
+                    <a href="/{{ user.username }}">
+                        <div class="photo-thumb">
+                            <div class="name">{{ user.fullname }}
+                                <span class="right" style="padding-right:10px;margin-top: -4px;"><span class="glyph general" style="font-size: 14px;color:#D41616">b</span>{{ user.fhp_affection|intcomma }}</span>
+                            </div>
+                            <img src="{{ user.pics.0.image_url }}"/>
+                        </div>
+                    </a>
+                {% endif %}
+            {% endfor %}
         </div>
         <div class="clear"></div>
 
         <div id="featured_photog">
-          <h2>Featured Photographers</h2>
+            <h2>Featured Photographers</h2>
 
-          {% for user in users %}
-            {% if user.pics.0.image_url %}
-              <a href="/{{ user.username }}">
-                <div class="photo-thumb">
-                  <div class="name">{{ user.fullname }}
-                    <span class="right" style="padding-right:10px;margin-top: -4px;"><span class="glyph general" style="font-size: 14px;color:#D41616">b</span>{{ user.fhp_affection|intcomma }}</span>
-                  </div>
-                  <img src="{{ user.pics.0.image_url }}"/>
-                </div>
-              </a>
-            {% endif %}
-          {% endfor %}
+            {% for user in users %}
+                {% if user.pics.0.image_url %}
+                    <a href="/{{ user.username }}">
+                        <div class="photo-thumb">
+                            <div class="name">{{ user.fullname }}
+                                <span class="right" style="padding-right:10px;margin-top: -4px;"><span class="glyph general" style="font-size: 14px;color:#D41616">b</span>{{ user.fhp_affection|intcomma }}</span>
+                            </div>
+                            <img src="{{ user.pics.0.image_url }}"/>
+                        </div>
+                    </a>
+                {% endif %}
+            {% endfor %}
         </div>
 
     </div>

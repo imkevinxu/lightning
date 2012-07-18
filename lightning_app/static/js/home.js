@@ -1,14 +1,16 @@
 $(function() {
 
 	$('#find-photographer').on("click", function() {
-		$.get('/users/'+$('#tags').val(), function(data) {
-			$('#gallery').empty();
+		var search_tag = $('#tags').val();
+
+		$.get('/users/'+search_tag, function(data) {
+			$('#featured_photog').empty();
 
 			var count = 51;
 			if (data.length < count) count = data.length;
 
 			for (var i=0, j=count; i<j; i++) {
-				// console.log(data[i].username);
+				console.log(data[i].username);
 
 				var item = data[i];
 				var affection = String(item.fhp_affection).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
@@ -20,8 +22,11 @@ $(function() {
 					    	.append($('<img></img>').attr("src", item.pics[0].image_url))
 					   	);
 
-				$('#gallery').prepend(elem);
+				$('#featured_photog').prepend(elem);
 			}
+
+			$('#newest_photog').remove();
+			$('#featured_photog').prepend('<h2>Search for "'+search_tag+'"</h2>');
 		});
 
 		return false;
