@@ -30,22 +30,23 @@
             <form action="/" method="post" id="search">{% csrf_token %} 
 
                 <h2 class ="white" id="search">I'm looking for a photographer who specializes in</h2>
-                    <select id="tags" name="tags">
-                        <option selected="selected" value="anything"></option>
+                
+                <select id="tags" name="tags">
+                    <option selected="selected" value="anything"></option>
 
-	                    {% if tags %}
-                            {% for tag in tags %}
-    	                        <option value="{{ tag }}">{{ tag }}</option>
-                            {% endfor %}
-	                    {% endif %}
+                    {% if tags %}
+                        {% for tag in tags %}
+	                        <option value="{{ tag }}">{{ tag }}</option>
+                        {% endfor %}
+                    {% endif %}
 
-                    </select>
+                </select>
 
                 <h2 class="white near" id="search">near</h2>
 
-                    <select id="city" name="city">
-                        <option selected="selected" value="San Francisco">San Francisco</option>
-                    </select>
+                <select id="city" name="city">
+                    <option selected="selected" value="San Francisco">San Francisco</option>
+                </select>
 
                 <input type="submit" name="submit" value="f" class="button glyph general" id="find-photographer" />
             </form>
