@@ -394,19 +394,22 @@ body#registration {
     background: url("http://i.imgur.com/TABvy.jpg") no-repeat center 0 fixed;
 }
 
+#main {
+    padding-bottom: 40px;
+}
+
 footer {
     -moz-box-shadow:    0px 0px 10px 0px rgba(0,0,0,0.7);
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.7);
     box-shadow:         0px 0px 10px 0px rgba(0,0,0,0.7);
     margin:0;padding:0;
-    margin-top:30px;
     line-height:45px;
     width:100% !important;
     background: url(http://subtlepatterns.com/patterns/dark_wood.png);
     color: white;
     font-weight: bold;
     font-size: 30px;
-    position: fixed;
+    position: absolute;
     bottom: 0;
 }
 
