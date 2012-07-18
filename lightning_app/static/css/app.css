@@ -1,5 +1,9 @@
 /* Custom lightning_app CSS  */
 
+html {
+    height: 100%;
+}
+
 body {
     color:#1E1E1F;
     font-family:"museo-sans", sans-serif;
@@ -295,7 +299,7 @@ label.checkbox:hover span.checkbox {
 }
 
 #gallery  {
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 80px;
 }
 
@@ -392,25 +396,28 @@ label.checkbox:hover span.checkbox {
 
 body#registration {
     background: url("http://i.imgur.com/TABvy.jpg") no-repeat center 0 fixed;
+    height: 100%;
 }
 
 #main {
-    padding-bottom: 40px;
+    padding-bottom: 45px;
 }
 
 footer {
-    -moz-box-shadow:    0px 0px 10px 0px rgba(0,0,0,0.7);
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.7);
-    box-shadow:         0px 0px 10px 0px rgba(0,0,0,0.7);
-    margin:0;padding:0;
-    line-height:45px;
+    position: absolute;
+    bottom: 0;
     width:100% !important;
-    background: url(http://subtlepatterns.com/patterns/dark_wood.png);
+    height: 45px;
+    line-height:45px;
+    margin:0;
+    padding:0;
     color: white;
     font-weight: bold;
     font-size: 30px;
-    position: absolute;
-    bottom: 0;
+    background: url(http://subtlepatterns.com/patterns/dark_wood.png);
+    -moz-box-shadow:    0px 0px 10px 0px rgba(0,0,0,0.7);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.7);
+    box-shadow:         0px 0px 10px 0px rgba(0,0,0,0.7);
 }
 
 footer a {
