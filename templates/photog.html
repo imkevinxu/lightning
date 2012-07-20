@@ -61,7 +61,7 @@
 
             <div class="nine columns offset-by-one">
                 <div class="profile_info">
-                    <h3 id="name">{{ user.fullname }}</h3>
+                    <h3 id="name"><a href="http://500px.com/{{ user.user.username }}" target="_blank">{{ user.fullname }}</a></h3>
 
                     {% if tags %}
                         <span class="info">Specializes in
