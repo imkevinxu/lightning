@@ -15,7 +15,18 @@
     <meta name="author" content="{% block meta_author %}{% endblock %}" />
 
     {# TODO: <link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.ico" /> #}
-    {# TODO: <link rel="apple-touch-icon" href="{{ STATIC_URL }}images/apple-touch-icon.png" /> #}
+
+    <!-- Apple Meta Data -->
+    <link rel="apple-touch-icon" href="{{ STATIC_URL }}img/logo.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <!-- Facebook Meta Data -->
+    <meta property="og:url" content="http://trylightning.com/" />
+    <meta property="og:title" content="Lightning - Connecting you with freelance photographers" />
+    <meta property="og:description" content="The beautifulest marketplace to discover and connect with freelance photographers showcasing their work." />
+    <meta property="og:image" content="{{ STATIC_URL }}img/logo.png" />
+    <meta property="og:type" content="website" />
 
     <script type="text/javascript" src="http://use.typekit.com/bqi6jyf.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
