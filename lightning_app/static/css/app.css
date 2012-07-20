@@ -326,6 +326,7 @@ label.checkbox:hover span.checkbox {
 
 #gallery img#loader {
     margin-left: 20px;
+    width: 24px;
 }
 
 #gallery a {text-decoration:none;color:inherit;}
@@ -471,7 +472,7 @@ footer a {
         width: 100%;
     }
 
-    #gallery img {
+    #gallery img.photo {
         width: 100%;
         max-width: none;
     }
@@ -560,7 +561,7 @@ footer a {
         width: 100%;
     }
 
-    #gallery img {
+    #gallery img.photo {
         width: 100%;
         max-width: none;
     }
