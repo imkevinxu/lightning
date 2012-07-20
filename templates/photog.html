@@ -41,7 +41,7 @@
     <div class="portfolio">
         <ul>        
             {% for photo in photos|slice:":15" %}
-                <li><img src="{{ photo.image_url }}" /></li>
+                <li><img src="{{ photo.image_url }}" class="hero_photo"/></li>
             {% endfor %}
         </ul>
     </div>
@@ -117,20 +117,6 @@
         <textarea id="message" name="message" rows="3"></textarea>
         <input type="submit" name="submit" value="Contact Me" class="success button" disabled/>
         <h6>Sorry! Contact me is temporarily disabled for this beta</h6>
-         <script type="text/javascript">
-          $("#date").glDatePicker(
-          {           
-              cssName: "calendar",
-              startDate: -1,
-              endDate: -1,
-              selectedDate: -1,
-              showPrevNext: true,
-              allowOld: true,
-              showAlways: false,
-              position: "absolute",
-              onChange: null
-          });
-        </script>
        
     </form>
     <a class="close-reveal-modal">&#215;</a>
@@ -144,31 +130,32 @@
     <script type="text/javascript">
         //So wet, *sigh*
         (function() {
-          if ($(window).width() < 767) {
-              var x = 0;
+            var x = 0;
+            var hero_photos = $('.hero_photo');
+            var limit = hero_photos.size() - 1;
 
-              window.setInterval(function(){
-                x += 1;
-                if (x == 9) {
-                    $('.portfolio-container').scrollTo( 0, 1500 );
-                    x = 0;
-                } else {
-                  $('.portfolio-container').scrollTo('+=300px', 800, { axis:'x', easing:'linear' } );
-                }
-              }, 3000);
-          } else {
-              var x = 0;
+            if ($(window).width() < 767) {
+                window.setInterval(function(){
+                    if (x == limit) {
+                        $('.portfolio-container').scrollTo( 0, 1500 );
+                        x = 0;
+                    } else {
+                      $('.portfolio-container').scrollTo('+='+hero_photos[x].width+'px', 800, { axis:'x', easing:'linear' } );
+                    }
+                    x += 1;
+                }, 3000);
 
-              window.setInterval(function(){
-                x += 1;
-                if (x == 8) {
-                    $('.portfolio-container').scrollTo( 0, 1500 );
-                    x = 0;
-                } else {
-                	$('.portfolio-container').scrollTo('+=900px', 800, { axis:'x', easing:'linear' } );
-                }
-              }, 3000);
-            }
+            } else {
+                window.setInterval(function(){
+                    if (x == limit) {
+                        $('.portfolio-container').scrollTo( 0, 1500 );
+                        x = 0;
+                    } else {
+                    	$('.portfolio-container').scrollTo('+='+hero_photos[x].width+'px', 800, { axis:'x', easing:'linear' } );
+                    }
+                    x += 1;
+                }, 3000);
+              }
         })();
     </script>
 
