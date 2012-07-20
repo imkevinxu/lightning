@@ -64,7 +64,7 @@
                 </a>
 
             </div>
-            <div class="four mobile-two columns" id="right-nav">
+            <div class="five mobile-two columns" id="right-nav">
                 {% if not registration %}
                     {% if request.user.is_authenticated and not request.user.is_superuser %}
                         <a href="{% url logout %}" id="profile" class="logout">Logout</a>
