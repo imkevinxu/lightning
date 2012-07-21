@@ -7,25 +7,23 @@
     <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>{% block title %}{% endblock %}</title>
 
-    <!-- Set the viewport width to device width for mobile -->
-    <meta name="viewport" content="width=device-width" />
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.ico" />
     <meta name="description" content="{% block meta_description %}{% endblock %}" />
     <meta name="author" content="{% block meta_author %}{% endblock %}" />
 
-    {# TODO: <link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.ico" /> #}
-
     <!-- Apple Meta Data -->
-    <link rel="apple-touch-icon" href="{{ STATIC_URL }}img/logo.png"/>
+    <link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}images/logo.png"/>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width=device-width" />
 
     <!-- Facebook Meta Data -->
     <meta property="og:url" content="http://trylightning.com/" />
     <meta property="og:title" content="Lightning - Connecting you with freelance photographers" />
     <meta property="og:description" content="The beautifulest marketplace to discover and connect with freelance photographers showcasing their work." />
-    <meta property="og:image" content="{{ STATIC_URL }}img/logo.png" />
+    <meta property="og:image" content="{{ STATIC_URL }}images/logo.png" />
     <meta property="og:type" content="website" />
 
     <script type="text/javascript" src="http://use.typekit.com/bqi6jyf.js"></script>
