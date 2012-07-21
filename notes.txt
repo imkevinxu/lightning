@@ -7,3 +7,4 @@
 - CSS is a friken mess
 - Invite-only
 - Email verification/confirmation
+- Filter for location should actually detect location......
