@@ -3,3 +3,4 @@
 *.pyc
 .DS_Store
 lightning/db.sql
+static
