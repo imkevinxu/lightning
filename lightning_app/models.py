@@ -36,15 +36,14 @@ class UserProfile(Base):
     fhp_affection = models.IntegerField(blank=True, null=True)
     fhp_photos_count = models.IntegerField(blank=True, null=True)
     profilepic = models.URLField(blank=True, null=True)
+
     phone = models.CharField(max_length=20,blank=True, null=True)
 
     def __unicode__(self):
         return self.fullname
 
     @staticmethod
-    def createUser(user, email=None, password=None, tag=None):
-        username = user['username']
-
+    def createUser(user, username, email=None, password=None, tag=None):
         try:
             baseUser = User.objects.create_user(username=username, email=email, password=password)
         except:
@@ -85,6 +84,7 @@ class UserProfile(Base):
             tag_tuple[0].save()
 
         photographer.save()
+
         return photographer
 
 class Photo(models.Model):

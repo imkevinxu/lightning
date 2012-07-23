@@ -80,7 +80,7 @@
                         <a href="/{{ request.user.username }}" id="profile">{{ request.user.get_profile.fullname }}</a>
                     {% else %}
                         <a href="{% url login %}" id="profile">Login</a>
-                        <a href="{% url reg1 %}" id="join"><!-- Injected by CSS --></a>
+                        <a href="{% url register %}" id="join"><!-- Injected by CSS --></a>
                     {% endif %}
                 {% endif %}
             </div>
