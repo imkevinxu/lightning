@@ -20,22 +20,22 @@ class UserProfile(Base):
     user = models.OneToOneField(User)
 
     # Other fields here
-    is_photographer = models.BooleanField()
-    fhp_id = models.IntegerField(blank=True, null=True)
-    firstname = models.CharField(max_length=255, blank=True, null=True)
-    lastname = models.CharField(max_length=255, blank=True, null=True)
-    fullname = models.CharField(max_length=255, blank=True, null=True)
-    location = models.CharField(max_length=255, blank=True, null=True)
-    fhp_about = models.TextField(blank=True, null=True)
-    fhp_domain = models.URLField(blank=True, null=True)
-    website = models.URLField(blank=True, null=True)
-    twitter = models.URLField(blank=True, null=True)
-    facebookpage = models.URLField(blank=True, null=True)
-    flickr = models.URLField(blank=True, null=True)
-    facebook = models.URLField(blank=True, null=True)
-    fhp_affection = models.IntegerField(blank=True, null=True)
-    fhp_photos_count = models.IntegerField(blank=True, null=True)
-    profilepic = models.URLField(blank=True, null=True)
+    is_photographer     = models.BooleanField()
+    fhp_id              = models.IntegerField(blank=True, null=True)
+    firstname           = models.CharField(max_length=255, blank=True, null=True)
+    lastname            = models.CharField(max_length=255, blank=True, null=True)
+    fullname            = models.CharField(max_length=255, blank=True, null=True)
+    location            = models.CharField(max_length=255, blank=True, null=True)
+    fhp_about           = models.TextField(blank=True, null=True)
+    fhp_domain          = models.URLField(blank=True, null=True)
+    website             = models.URLField(blank=True, null=True)
+    twitter             = models.URLField(blank=True, null=True)
+    facebookpage        = models.URLField(blank=True, null=True)
+    flickr              = models.URLField(blank=True, null=True)
+    facebook            = models.URLField(blank=True, null=True)
+    fhp_affection       = models.IntegerField(blank=True, null=True)
+    fhp_photos_count    = models.IntegerField(blank=True, null=True)
+    profilepic          = models.URLField(blank=True, null=True)
 
     phone = models.CharField(max_length=20,blank=True, null=True)
 
@@ -50,37 +50,48 @@ class UserProfile(Base):
             baseUser = User.objects.get(username=username)
         
         photographer = UserProfile.objects.get_or_create(user=baseUser)[0]
-        photographer.is_photographer = True
-        photographer.fhp_id = user['id']
-        photographer.firstname = user['firstname']
-        photographer.lastname = user['lastname']
-        photographer.fullname = user['fullname']
-        location = filter(None, [user["city"], user["state"], user["country"]])
-        location = ", ".join(location)
-        photographer.location = location
-        photographer.fhp_about = user['about']
-        photographer.fhp_domain = user['domain']
-        if 'website' in user['contacts']:
-            photographer.website = user['contacts']['website']
-        if 'twitter' in user['contacts']:
-            photographer.twitter = user['contacts']['twitter']
-        if 'facebookpage' in user['contacts']:
-            photographer.facebookpage = user['contacts']['facebookpage']
-        if 'flickr' in user['contacts']:
-            photographer.flickr = user['contacts']['flickr']
-        if 'facebook' in user['contacts']:
-            photographer.facebook = user['contacts']['facebook']
-        photographer.fhp_affection = user['affection']
-        photographer.fhp_photos_count = user['photos_count']
-        photographer.profilepic = user['userpic_url']
-        if "http://" not in user['userpic_url']:
-            photographer.profilepic = 'http://500px.com%s' % user['userpic_url']
 
+        photographer.is_photographer = True
+        
+        photographer.fhp_id                 = user['id']
+        photographer.firstname              = user['firstname']
+        photographer.lastname               = user['lastname']
+        photographer.fullname               = user['fullname']
+        
+        # sets location like "San Francisco, CA, United States"
+        location                            = filter(None, [user["city"], user["state"], user["country"]])
+        location                            = ", ".join(location)
+        photographer.location               = location
+        
+        photographer.profilepic             = user['userpic_url']
+        if "http://" not in user['userpic_url']:
+            photographer.profilepic         = 'http://500px.com%s' % user['userpic_url']
+
+        photographer.fhp_about              = user['about']
+        photographer.fhp_domain             = user['domain']
+        photographer.fhp_affection          = user['affection']
+        photographer.fhp_photos_count       = user['photos_count']
+
+        if 'website' in user['contacts']:
+            photographer.website            = user['contacts']['website']
+        if 'twitter' in user['contacts']:
+            photographer.twitter            = user['contacts']['twitter']
+        if 'facebookpage' in user['contacts']:
+            photographer.facebookpage       = user['contacts']['facebookpage']
+        if 'flickr' in user['contacts']:
+            photographer.flickr             = user['contacts']['flickr']
+        if 'facebook' in user['contacts']:
+            photographer.facebook           = user['contacts']['facebook']
+
+        # add tag to photographer
         if tag is not None:
             tag_tuple = Tag.objects.get_or_create(tagname=tag)
+            
             tagged_users = tag_tuple[0].user.all()
+
             if photographer not in tagged_users:
                 tag_tuple[0].user.add(photographer)
+
             tag_tuple[0].save()
 
         photographer.save()
@@ -90,19 +101,19 @@ class UserProfile(Base):
 class Photo(models.Model):
     user = models.ForeignKey(UserProfile)
 
-    photo_id = models.IntegerField()
-    name = models.CharField(max_length=255)
-    image_url = models.URLField()
+    photo_id            = models.IntegerField()
+    name                = models.CharField(max_length=255)
+    image_url           = models.URLField()
 
-    description = models.TextField(blank=True, null=True)
-    times_viewed = models.IntegerField(blank=True, null=True)
-    rating = models.FloatField(blank=True, null=True)
-    created_at = models.DateTimeField(blank=True, null=True)
-    width = models.IntegerField(blank=True, null=True)
-    height = models.IntegerField(blank=True, null=True)
-    votes_count = models.IntegerField(blank=True, null=True)
-    favorites_count = models.IntegerField(blank=True, null=True)
-    comments_count = models.IntegerField(blank=True, null=True)
+    description         = models.TextField(blank=True, null=True)
+    times_viewed        = models.IntegerField(blank=True, null=True)
+    rating              = models.FloatField(blank=True, null=True)
+    created_at          = models.DateTimeField(blank=True, null=True)
+    width               = models.IntegerField(blank=True, null=True)
+    height              = models.IntegerField(blank=True, null=True)
+    votes_count         = models.IntegerField(blank=True, null=True)
+    favorites_count     = models.IntegerField(blank=True, null=True)
+    comments_count      = models.IntegerField(blank=True, null=True)
 
     def __unicode__(self):
         return "%s ID:%d" % (self.name, self.photo_id) 
@@ -115,15 +126,15 @@ class Photo(models.Model):
 
         pic = Photo.objects.create(photo_id=photo_id, user=user, name=name, image_url=image_url)
 
-        pic.description = info['description']
-        pic.times_viewed = info['times_viewed']
-        pic.rating = info['rating']
-        pic.created_at = info['created_at']
-        pic.width = info['width']
-        pic.height = info['height']
-        pic.votes_count = info['votes_count']
-        pic.favorites_count = info['favorites_count']
-        pic.comments_count = info['comments_count']
+        pic.description         = info['description']
+        pic.times_viewed        = info['times_viewed']
+        pic.rating              = info['rating']
+        pic.created_at          = info['created_at']
+        pic.width               = info['width']
+        pic.height              = info['height']
+        pic.votes_count         = info['votes_count']
+        pic.favorites_count     = info['favorites_count']
+        pic.comments_count      = info['comments_count']
 
         pic.save()
 
