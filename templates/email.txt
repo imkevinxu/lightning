@@ -1,0 +1,5 @@
+Welcome to Lightning, {{ username }}
+
+You've been invited to join Lightning, the service for freelance photographers to find clients.
+
+You can view your profile at http://trylightning.com/{{ username }}

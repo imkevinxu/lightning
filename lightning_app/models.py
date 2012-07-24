@@ -20,8 +20,11 @@ class UserProfile(Base):
     user = models.OneToOneField(User)
 
     # Other fields here
+    is_invited          = models.BooleanField(default=False)
     is_photographer     = models.BooleanField()
+
     fhp_id              = models.IntegerField(blank=True, null=True)
+    fhp_username        = models.CharField(max_length=255, blank=True, null=True)
     firstname           = models.CharField(max_length=255, blank=True, null=True)
     lastname            = models.CharField(max_length=255, blank=True, null=True)
     fullname            = models.CharField(max_length=255, blank=True, null=True)
@@ -48,12 +51,13 @@ class UserProfile(Base):
             baseUser = User.objects.create_user(username=username, email=email, password=password)
         except:
             baseUser = User.objects.get(username=username)
-        
+
         photographer = UserProfile.objects.get_or_create(user=baseUser)[0]
 
         photographer.is_photographer = True
         
         photographer.fhp_id                 = user['id']
+        photographer.fhp_username           = user['username']
         photographer.firstname              = user['firstname']
         photographer.lastname               = user['lastname']
         photographer.fullname               = user['fullname']
