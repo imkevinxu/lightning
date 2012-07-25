@@ -7,7 +7,7 @@ html {
 body {
     color: #1E1E1F;
     font-family: "museo-sans", sans-serif;
-    background: url(http://subtlepatterns.com/patterns/white_wall.png);
+    background: url(http://s3.amazonaws.com/lightning-app/images/white_wall.png);
 }
 
 .right {
@@ -34,7 +34,7 @@ body {
     margin: 0;
     padding: 0;
 
-    background: #111 url(http://subtlepatterns.com/patterns/dark_wood.png);
+    background: #111 url(http://s3.amazonaws.com/lightning-app/images/darkwood.png);
     font-family: "museo-sans", Arial, sans-serif;
     font-weight: bold;
     line-height: 45px;
@@ -118,7 +118,7 @@ body {
 }
 
 .profile-container {
-    background: url("../images/gif.gif");
+    background: url("http://s3.amazonaws.com/lightning-app/images/background.gif");
     width: 100%;
     border-top: solid 1px white;
     -webkit-box-shadow: 0 0 5px 2px #888;
@@ -384,7 +384,7 @@ label.checkbox:hover span.checkbox {
 }
 
 #registration {
-    background: url("http://i.imgur.com/TABvy.jpg") no-repeat center 0 fixed;
+    background: url("http://s3.amazonaws.com/lightning-app/images/login.jpg") no-repeat center 0 fixed;
     height: 100%;
 }
 
@@ -404,7 +404,7 @@ footer {
     font-weight: bold;
     line-height: 45px;
     color: white;
-    background: url(http://subtlepatterns.com/patterns/dark_wood.png);
+    background: url(http://s3.amazonaws.com/lightning-app/images/darkwood.png);
     -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.7);
        -moz-box-shadow: 0 0 10px 0 rgba(0,0,0,0.7);
             box-shadow: 0 0 10px 0 rgba(0,0,0,0.7);
@@ -488,7 +488,7 @@ footer a {
     }
 
     body#registration {
-        background: url("http://i.imgur.com/TABvy.jpg") no-repeat center center fixed;
+        background: url("http://s3.amazonaws.com/lightning-app/images/login.jpg") no-repeat center center fixed;
     }
 
     .portfolio-container {
