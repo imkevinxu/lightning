@@ -107,7 +107,6 @@ class Photo(models.Model):
 
     photo_id            = models.IntegerField()
     name                = models.CharField(max_length=255)
-    image_url           = models.URLField()
 
     description         = models.TextField(blank=True, null=True)
     times_viewed        = models.IntegerField(blank=True, null=True)
@@ -120,15 +119,14 @@ class Photo(models.Model):
     comments_count      = models.IntegerField(blank=True, null=True)
 
     def __unicode__(self):
-        return "%s ID:%d" % (self.name, self.photo_id) 
+        return "%s ID:%d" % (self.name, self.photo_id)
 
     @staticmethod
     def createPhoto(user, info):
         photo_id = info['id']
         name = info['name']
-        image_url = info['image_url']
 
-        pic = Photo.objects.create(photo_id=photo_id, user=user, name=name, image_url=image_url)
+        pic = Photo.objects.create(photo_id=photo_id, user=user, name=name)
 
         pic.description         = info['description']
         pic.times_viewed        = info['times_viewed']
@@ -141,6 +139,30 @@ class Photo(models.Model):
         pic.comments_count      = info['comments_count']
 
         pic.save()
+
+        return pic
+
+IMAGE_SIZES = (
+    ('70x70', '70x70'),
+    ('140x140', '140x140'),
+    ('280x280', '280x280'),
+    ('full', 'full'),
+)
+
+class Image(models.Model):
+    photo = models.ForeignKey(Photo)
+
+    image_url           = models.URLField()
+    image_size          = models.CharField(choices=IMAGE_SIZES, max_length=10, null=True)
+
+    def __unicode__(self):
+        return "%s %s" % (self.photo.id, self.image_size)
+
+    @staticmethod
+    def createForPhoto(photo, urls, image_size=None):
+        for url, size in zip(urls, IMAGE_SIZES):
+            img = Image.objects.create(photo=photo, image_url=url, image_size=size[0])
+            img.save()
 
 class Tag(models.Model):
     tagname = models.CharField(max_length=255)

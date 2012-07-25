@@ -35,11 +35,13 @@ class FiveHundredPx:
         post_data = None if post_args is None else urllib.urlencode(post_args)
         try:
             # HTTP URL used in API
-            # print FiveHundredPx.BASE_URL + path + "?" + urllib.urlencode(args)
+            url = FiveHundredPx.BASE_URL + path + "?" + urllib.urlencode(args, True)
+            print url
 
-            file_resp = urllib.urlopen(FiveHundredPx.BASE_URL + path + "?" +
-                              urllib.urlencode(args), post_data)
-            response = _parse_json(file_resp.read())
+            file_resp = urllib.urlopen(url, post_data)
+            
+            data = file_resp.read()
+            response = _parse_json(data)
         finally:
             file_resp.close()
 
@@ -54,7 +56,7 @@ class FiveHundredPx:
         
         while page <= total_pages:
             for p in data['photos']:
-                count = count+1
+                count += 1
                 if count > limit: return
                 yield p
             
@@ -77,20 +79,23 @@ class FiveHundredPx:
         data = self.request('/users/show', args)
         return data
 
-    def get_user_photos(self, username, limit=200):
-        args = {"feature": "user", "username": username}
+    def get_user_photos(self, user_id, limit=200):
+        args = {
+            "feature": "user",
+            "user_id": user_id,
+            "image_size[]": [1, 2, 3, 4]
+        }
         data = self.request('/photos', args)
+
         total_pages = data['total_pages']
         page = data['current_page']
         count = 0
         
         while page <= total_pages:
             for p in data['photos']:
-                count = count+1
+                count += 1
                 if count > limit: return
                 yield p
             
             args['page'] = page = page+1
             data = self.request('/photos', args)
-        
-        

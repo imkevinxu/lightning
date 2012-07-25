@@ -25,7 +25,7 @@ class UserProfileAdmin(admin.ModelAdmin):
             context = Context({
                 'username': user.user.username
             })
-            
+
             body = bodyTemplate.render(context)
 
             if len(user.user.email) > 0:
@@ -43,10 +43,14 @@ class PhotoAdmin(admin.ModelAdmin):
     ordering = ['-created_at']
     search_fields = ['name', 'photo_id']
 
+class ImageAdmin(admin.ModelAdmin):
+    list_display = ('photo', 'image_url', 'image_size')
+
 class TagAdmin(admin.ModelAdmin):
     list_display = ('tagname',)
     search_fields = ['tagname']
 
 admin.site.register(UserProfile, UserProfileAdmin)
 admin.site.register(Photo, PhotoAdmin)
+admin.site.register(Image, ImageAdmin)
 admin.site.register(Tag, TagAdmin)
