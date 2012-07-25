@@ -119,7 +119,7 @@ class Photo(models.Model):
     comments_count      = models.IntegerField(blank=True, null=True)
 
     def __unicode__(self):
-        return "%s ID:%d" % (self.name, self.photo_id)
+        return "%s ID:%d User: %s" % (self.name, self.photo_id, self.user.id)
 
     @staticmethod
     def createPhoto(user, info):
@@ -159,7 +159,7 @@ class Image(models.Model):
         return "%s %s" % (self.photo.id, self.image_size)
 
     @staticmethod
-    def createForPhoto(photo, urls, image_size=None):
+    def createForPhoto(photo, urls):
         for url, size in zip(urls, IMAGE_SIZES):
             img = Image.objects.create(photo=photo, image_url=url, image_size=size[0])
             img.save()
