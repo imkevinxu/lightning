@@ -469,7 +469,9 @@ footer a {
     }
 
     #gallery .photo-thumb {
-        width: 100%;
+        width: 36%;
+        min-width: 210px;
+        max-width: 280px;
     }
 
     #gallery img.photo {
@@ -554,7 +556,7 @@ footer a {
     }
 
     #gallery .photo-thumb {
-        width: 48%;
+        width: 280px;
     }
 
     #gallery .name {
