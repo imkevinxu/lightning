@@ -5,13 +5,13 @@ html {
 }
 
 body {
-    color:#1E1E1F;
-    font-family:"museo-sans", sans-serif;
+    color: #1E1E1F;
+    font-family: "museo-sans", sans-serif;
     background: url(http://subtlepatterns.com/patterns/white_wall.png);
 }
 
 .right {
-    float:right;
+    float: right;
 }
 
 .center {
@@ -23,57 +23,54 @@ body {
 }
 
 .item {
-  width: 310px;
-  margin: 10px;
-  float: left;
+    width: 310px;
+    margin: 10px;
+    float: left;
 }
 
 /* Top nav bar stylings */
-.top-bar { 
-    -moz-box-shadow:    0px 0px 10px 0px rgba(0,0,0,0.7);
-	-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.7);
-	box-shadow:         0px 0px 10px 0px rgba(0,0,0,0.7);
-}
+.top-bar {
+    width: 100% !important;
+    margin: 0;
+    padding: 0;
 
-.top-bar{
-    margin:0;padding:0;
-    line-height:45px;
-    width:100% !important;
-    background:#111;
-    background: url(http://subtlepatterns.com/patterns/dark_wood.png);
+    background: #111 url(http://subtlepatterns.com/patterns/dark_wood.png);
+    font-family: "museo-sans", Arial, sans-serif;
+    font-weight: bold;
+    line-height: 45px;
+
+    -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.7);
+       -moz-box-shadow: 0 0 10px 0 rgba(0,0,0,0.7);
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.7);
 }
 
 .top-bar #logo {
+    display: inline-block;
     font-size: 22px;
     line-height: 40px;
-    display: inline-block;
-    margin-top:0px;
+    margin-top: 0;
 }
 #lightning {
-    display: inline-block;
-    background: url(http://s3.amazonaws.com/lightning-app/images/icon.png) no-repeat 0 0;
+    position: relative;
+    float: left;
     height: 40px;
     width: 30px;
-    position:relative;
-    float:left;
-    margin-top:-2px;
+    margin-top: -2px;
+    background: url(http://s3.amazonaws.com/lightning-app/images/icon.png) no-repeat 0 0;
 }
 .top-bar #logo:hover #lightning {
     background-position: 0 -44px;
 }
     
-.top-bar a{color:#fff;font-weight:bold}
-
-.top-bar {
-    font-family:"museo-sans", Arial, sans-serif;
-    font-weight:bold;
+.top-bar a {
+    color: #fff;
+    font-weight: bold;
 }
 
 .top-bar #right-nav a {
-    display: inline-block;
+    float: right;
     padding: 0 15px;
     text-align: center;
-    float: right;
 }
 
 .top-bar #right-nav a:hover {
@@ -81,37 +78,37 @@ body {
 }
 
 #camera-icon {
-    height:30px;
-    margin-top:8px;
-    margin-right:10px;
+    height: 30px;
+    margin-top: 8px;
+    margin-right: 10px;
 }
 
 /* Portfolio slideshow */
 
 .portfolio-container {
-    height:455px;
+    position: relative;
     width: 100%;
+    height: 455px;
     overflow-x: scroll;
     overflow-y: hidden;
-    position: relative;
-    z-index:-999;
-    background-color:black;
 
+    background-color: black;
+
+    z-index: -999;
 }
 
 .portfolio-container .portfolio {
-    height:500px;
+    height: 500px;
     overflow: hidden;
     width: 9999px;
 }
 
 .portfolio-container li {
-    display: inline-block;
     float: left;
 }
 
 .portfolio-container img {
-    z-index:-999;
+    z-index: -999;
 }
 
 
@@ -121,88 +118,69 @@ body {
 }
 
 .profile-container {
-    background:url("../images/gif.gif");
-    width:100%;
-    border-top:solid 1px white;
-    -moz-box-shadow: 0 0 5px 2px #888;
+    background: url("../images/gif.gif");
+    width: 100%;
+    border-top: solid 1px white;
     -webkit-box-shadow: 0 0 5px 2px #888;
-    box-shadow:  0 0 5px 2px #888;
+       -moz-box-shadow: 0 0 5px 2px #888;
+            box-shadow: 0 0 5px 2px #888;
 }
 
 .propic {
-    z-index:100 !important;
-    height:140px;
-    width:140px;
-    background:white;
-    -webkit-border-radius:3px;
-    border-radius:3px;
-    moz-border-radius:3px;
-    -webkit-box-shadow:inset 1px 1px 3px rgba(0, 0, 0, 0.4);
-    box-shadow:inset 1px 1px 3px rgba(0, 0, 0, 0.4);
-    moz-box-shadow:inset 1px 1px 3px rgba(0, 0, 0, 0.4);
     float: left;
+    z-index: 100 !important;
+    height: 140px;
+    width: 140px;
+    background: white;
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+    -webkit-box-shadow:inset 1px 1px 3px rgba(0, 0, 0, 0.4);
+       -moz-box-shadow:inset 1px 1px 3px rgba(0, 0, 0, 0.4);
+            box-shadow:inset 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
 
-.propic img {    
-    height:97%;
-    margin-left:auto;
-    margin-right:auto;
-    padding-top:7px;
-    display:block;
-    
+.propic img {
+    display: block;
+    height: 97%;
+    padding-top: 7px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #name {
-    font-weight:bold;
-    font-size:36px;
+    font-weight: bold;
+    font-size: 36px;
     margin-top: 0;
     margin-bottom: 10px;
 }
 
 .info {
-    font-size:14px;
     display: block;
+    font-size: 14px;
     line-height: 140%;
 }
 
 .quote {
-    margin-top:10px;
-    word-wrap: break-word
-    font-style:italic;
-    font-size:16px;
+    margin-top: 10px;
+    font-style: italic;
+    font-size: 16px;
+    word-wrap: break-word;
 }
 
 .tag {
-    font-weight:bold;
+    font-weight: bold;
 }
 
 #contact-button {
-    margin: 15px 0;
     width: 140px;
+    margin: 15px 0;
 }
 
-/*
-.pink {
-    border:1px solid #BF0569;
-    background: -webkit-gradient(linear, center top, center bottom, from(#ED1D89), to(#BF0265));
-    background: -moz-linear-gradient(top, #ED1D89, #BF0265);
-    height:30px;
-    -moz-border-radius: 0.3em;
-      -webkit-border-radius:0.3em;
-    box-shadow:inset 0 1px 1px rgba(255, 255, 255, 0.3),inset 0 -1px 1px #C90373,0 1px 2px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow:inset 0 1px 1px rgba(255, 255, 255, 0.3),inset 0 -1px 1px #C90373,0 1px 2px rgba(0, 0, 0, 0.5)
-    -webkit-box-shadow:inset 0 1px 1px rgba(255, 255, 255, 0.3),inset 0 -1px 1px #C90373,0 1px 2px rgba(0, 0, 0, 0.5)
-    color: white !important;
-    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5);
-}
-*/
-
-
-form#reg2 #profilepic {
+#reg2 #profilepic {
     height: 280px;
     padding: 10px 10px 50px 10px;
-    background-color: white;
     border: 1px solid #AFAFAF;
+    background-color: white;
 }
 
 label.checkbox {
@@ -213,9 +191,10 @@ label.checkbox {
 
 label.checkbox span.checkbox {
     -webkit-transition: all 0.30s ease-in-out;
-    -moz-transition: all 0.30s ease-in-out;
-    -ms-transition: all 0.30s ease-in-out;
-    -o-transition: all 0.30s ease-in-out;
+       -moz-transition: all 0.30s ease-in-out;
+        -ms-transition: all 0.30s ease-in-out;
+         -o-transition: all 0.30s ease-in-out;
+            transition: all 0.30s ease-in-out;
 }
 
 label.checkbox:hover span.checkbox {
@@ -229,37 +208,37 @@ label.checkbox:hover span.checkbox {
 
 /* MODAL WINDOW  */
 #mask {
-  position:fixed;
-  left:0px;
-  top:0px;
-  z-index:9000;
-  background-color: rgba(0, 0, 0, 0.80);
-  display:none;
+    display: none;
+    position:fixed;
+    left: 0;
+    top: 0;
+    z-index: 9000;
+    background-color: rgba(0, 0, 0, 0.80);
 }
  
 #boxes .window {
-  position:fixed;
-  left:0;
-  top:0;
-  width:200px;
-  height:200px;
-  display:none;
-  z-index:9999;
-  padding:20px;
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+    z-index: 9999;
 }
 
 #boxes #booking {
-  width:375px;
-  height:203px;
-  padding:10px;
-  background-color:#ffffff;
+    width: 375px;
+    height: 203px;
+    padding: 10px;
+    background-color: #fff;
 }
 
 .registration {
     margin-top: 50px !important;
-    background-color: rgba(0, 0, 0, 0.80);
-    padding:40px;
+    padding: 40px;
     padding-bottom: 80px;
+    background-color: rgba(0, 0, 0, 0.80);
 }
 
 .registration.reg2 {
@@ -305,46 +284,50 @@ label.checkbox:hover span.checkbox {
 
 #gallery .photo-thumb {
     float: left;
-    display: inline-block;
-    height: 206px;
+    position: relative;
     overflow: hidden;
+
+    max-height: 206px;
     margin-right: 10px;
     margin-bottom: 25px;
-    position: relative;
     background-color:rgba(0, 0, 0, 0.65);
 
-    -moz-box-shadow: 1px 1px 3px #888;
     -webkit-box-shadow: 1px 1px 3px #888;
-    box-shadow: 1px 1px 3px #888;
+       -moz-box-shadow: 1px 1px 3px #888;
+            box-shadow: 1px 1px 3px #888;
 }
 
-#gallery img.photo {
-    max-width:310px;
+#gallery .photo {
+    max-width: 310px;
     background-color: black;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-#gallery img#loader {
+#gallery #loader {
     margin-left: 20px;
     width: 24px;
 }
 
-#gallery a {text-decoration:none;color:inherit;}
+#gallery a {
+    text-decoration: none;
+}
 
 #gallery .name {
-    font-family:"museo-sans", "Helvetica Neue", Arial,sans-serif, sans-serif;
-    text-align:left;
-    font-size:14px;
-    text-shadow:rgba(0, 0, 0, 0.9);
-    background-color:rgba(0, 0, 0, 0.65);
-    width: 310px;
+    position: absolute;
+    width: 100%;
     height: 40px;
-    padding-top:12px;
-    padding-left:12px;
-    position:absolute;
-    color: white;
+    padding-top: 12px;
+    padding-left: 12px;
     bottom: 0;
+
+    background-color: rgba(0, 0, 0, 0.65);
+
+    font-family: "museo-sans", "Helvetica Neue", Arial, sans-serif;
+    text-align: left;
+    font-size: 14px;
     font-weight: bold;
+    color: white;
+    text-shadow: rgba(0, 0, 0, 0.9);
 }
 
 #gallery .photo-thumb:hover .name {
@@ -360,31 +343,32 @@ label.checkbox:hover span.checkbox {
     padding: 20px 30px;
     margin-top: 30px;
 
-    -moz-box-shadow: 1px 1px 3px #888;
     -webkit-box-shadow: 1px 1px 3px #888;
-    box-shadow: 1px 1px 3px #888;
+       -moz-box-shadow: 1px 1px 3px #888;
+            box-shadow: 1px 1px 3px #888;
 }
 
 #search-container #search select {
-    font-size: 28px;
+    display: inline-block;
+    width: auto;
     margin-left: 8px;
     margin-right: 8px;
     border: none;
+    border-bottom: 1px dotted white;
+    -webkit-border-radius: 0;
+       -moz-border-radius: 0;
+            border-radius: 0;
+    -webkit-appearance: textfield;
+
     background-color: inherit;
     color: white;
-    -webkit-appearance: textfield;
-    display: inline-block;
-    width: auto;
-    border-bottom: 1px dotted white;
-    -moz-border-radius:0px;
-    -webkit-border-radius:0px;
-    border-radius:0px;
+    font-size: 28px;
     text-align: center;
 }
 
-#search-container h2#search {
+#search-container #search {
     display: inline;
-    line-height:140%;
+    line-height: 140%;
 }
 
 #search-container #find-photographer {
@@ -399,7 +383,7 @@ label.checkbox:hover span.checkbox {
     content: "Join as a photographer";
 }
 
-body#registration {
+#registration {
     background: url("http://i.imgur.com/TABvy.jpg") no-repeat center 0 fixed;
     height: 100%;
 }
@@ -411,18 +395,19 @@ body#registration {
 footer {
     position: absolute;
     bottom: 0;
-    width:100% !important;
+    width: 100% !important;
     height: 45px;
-    line-height:45px;
-    margin:0;
-    padding:0;
-    color: white;
-    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    
     font-size: 30px;
+    font-weight: bold;
+    line-height: 45px;
+    color: white;
     background: url(http://subtlepatterns.com/patterns/dark_wood.png);
-    -moz-box-shadow:    0px 0px 10px 0px rgba(0,0,0,0.7);
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.7);
-    box-shadow:         0px 0px 10px 0px rgba(0,0,0,0.7);
+    -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.7);
+       -moz-box-shadow: 0 0 10px 0 rgba(0,0,0,0.7);
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.7);
 }
 
 footer a {
@@ -431,9 +416,9 @@ footer a {
 
 @media only screen and (max-width: 767px) {
     .top-bar #right-nav a {
+        float: right;
         padding: 0 5px;
         text-align: center;
-        float: right;
         font-size: 16px;
     }
 
@@ -451,11 +436,11 @@ footer a {
         padding-bottom: 25px;
     }
 
-    #search-container h2#search {
+    #search-container #search {
         font-size: 18px;
     }
 
-    #search-container h2#search.near {
+    #search-container #search.near {
         margin-right: 4px;
     }
 
@@ -477,10 +462,6 @@ footer a {
     #gallery img.photo {
         width: 100%;
         max-width: none;
-    }
-
-    #gallery .name {
-        width: 100%;
     }
 
     #gallery .photo-thumb {
@@ -511,11 +492,11 @@ footer a {
     }
 
     .portfolio-container {
-        height:155px;
+        height: 155px;
     }
 
     .portfolio-container .portfolio {
-        height:200px;
+        height: 200px;
     }
 
     .portfolio-container img {
@@ -538,11 +519,11 @@ footer a {
         padding: 10px 15px;
     }
 
-    #search-container h2#search {
+    #search-container #search {
         font-size: 26px;
     }
 
-    #search-container h2#search.near {
+    #search-container #search.near {
         margin-right: 6px;
     }
 
@@ -557,18 +538,11 @@ footer a {
 
     #gallery .photo-thumb {
         width: 280px;
-    }
-
-    #gallery .name {
-        width: 100%;
+        margin-bottom: 10px;
     }
 
     #gallery img.photo {
         width: 100%;
         max-width: none;
-    }
-
-    #gallery .photo-thumb {
-        margin-bottom: 10px;
     }
 }
