@@ -43,7 +43,10 @@ class UserProfile(Base):
     phone = models.CharField(max_length=20,blank=True, null=True)
 
     def __unicode__(self):
-        return self.fullname
+        if self.fullname is not None:
+            return self.fullname
+        else:
+            return ''
 
     @staticmethod
     def createUser(user, username, email=None, password=None, tag=None):

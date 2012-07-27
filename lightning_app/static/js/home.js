@@ -7,14 +7,16 @@ $(function() {
 
 		$.get('/users/'+search_tag, function(data) {
 			var results = $('<div></div>');
-			var count = 51;
+			
+			// limit number of results to display
+			var count = 27;
 			if (data.length < count) count = data.length;
 
 			for (var i=0, j=count; i<j; i++) {
-				// console.log(data[i].username);
+				// TODO: use a real template system here
 
 				var item = data[i];
-				var affection = String(item.fhp_affection).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+				var affection = String(item.fhp_affection).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"); // turns 1000000 into 1,000,000
 				var elem = $('<a></a>').attr("href", "/"+item.username)
 					    .append($('<div></div>').addClass("photo-thumb")
 					    	.append($('<div></div>').addClass("name").html(item.fullname)
@@ -26,11 +28,10 @@ $(function() {
 				results.append(elem);
 			}
 
-			$('#newest_photog').remove();
-			$('#featured_photog').empty();
+			$('#newest_photog').empty();
 
-			$('#featured_photog').append('<h2>Search for "'+search_tag+'"</h2>');
-			$('#featured_photog').append(results);
+			$('#newest_photog').append('<h2>Search for "'+search_tag+'"</h2>');
+			$('#newest_photog').append(results);
 			$('#gallery').css("opacity", 1);
 		});
 
