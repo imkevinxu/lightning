@@ -142,6 +142,13 @@ class Photo(models.Model):
 
         return pic
 
+    # SIDE EFFECT: assign image_url to this photo
+    def getImage(self, size):
+        image = self.image_set.filter(image_size=size)
+        if len(image) > 0:
+            self.image_url = image[0].image_url
+        return self
+
 IMAGE_SIZES = (
     ('70x70', '70x70'),
     ('140x140', '140x140'),
