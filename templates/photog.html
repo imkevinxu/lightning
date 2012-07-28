@@ -105,16 +105,42 @@
 
 <div id="contact-modal" class="reveal-modal">
     <h2>Get in touch</h2>
-    <p class="lead">Your professional photographer is only a text away</p>
+    <p class="lead">Your professional photographer is a message away</p>
 
-    <form method="POST">{% csrf_token %}
-      <input type="text" name="name" placeholder="Name"/>
+    <form method="POST" class="custom">{% csrf_token %}
+        <input type="text" name="name" placeholder="Name"/>
         <input type="text" name="email" placeholder="Email Address"/>
-        <input type="text" name="phone" placeholder="Phone Number"/>
-        <input type="date" name="date" placeholder="Date of event"/>
         
-        <label for="message">Tell {{ user.firstname }} what you're looking for.</label>
+        <hr />
+
+        <div class="block">
+            <h6>Tell {{ user.firstname }} what you're looking for:</h6>
+
+            <label class="inline">Type of photos:</label>
+
+            {% for tag in tags %}
+            <label for="checkbox{{ forloop.counter }}" class="checkbox">
+               <input type="checkbox" name="tags" id="checkbox{{ forloop.counter }}" style="display: none;">
+                <span class="custom checkbox"></span> {{ tag }}
+            </label>
+            {% endfor %}
+
+            <label for="checkboxother" class="checkbox">
+                <input type="checkbox" name="tags" id="checkboxother" style="display: none;">
+                <span class="custom checkbox"></span> Other
+            </label>
+        </div>
+        <div class="clear"></div>
+        
+        <div id="event-date">
+            <label for="event-date" class="inline">Date of shoot</label>
+            <input type="date" name="date" placeholder="Date of event"/>
+        </div>
+        <div class="clear"></div>
+
+        <label for="message" class="block">Explain what you're looking for in detail:</label>
         <textarea id="message" name="message" rows="3"></textarea>
+
         <input type="submit" name="submit" value="Contact Me" class="success button"/>
         
     </form>

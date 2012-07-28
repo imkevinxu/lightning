@@ -10,10 +10,6 @@ body {
     background: url(http://s3.amazonaws.com/lightning-app/images/white_wall.png);
 }
 
-.right {
-    float: right;
-}
-
 .center {
     text-align: center;
 }
@@ -26,6 +22,11 @@ body {
     width: 310px;
     margin: 10px;
     float: left;
+}
+
+.block {
+    display: block;
+    margin-bottom: 1em;
 }
 
 /* Top nav bar stylings */
@@ -202,6 +203,14 @@ label.checkbox:hover span.checkbox {
     border: 1px solid rgba(81, 203, 238, 1);
 }
 
+#contact-modal label.inline {
+    float: left;
+    width: 24%;
+}
+#event-date input {
+    width: 33%;
+}
+
 .reveal-modal-bg {
     background-color: rgba(0, 0, 0, 0.80);
 }
@@ -329,6 +338,9 @@ label.checkbox:hover span.checkbox {
     color: white;
     text-shadow: rgba(0, 0, 0, 0.9);
 }
+#gallery .right {
+    float: right;
+}
 
 #gallery .photo-thumb:hover .name {
     height: 45px;
@@ -455,17 +467,15 @@ footer a {
 
     #gallery .photo-thumb {
         width: 36%;
+        max-height: 36%;
         min-width: 210px;
         max-width: 280px;
+        margin-bottom: 10px;
     }
 
     #gallery img.photo {
         width: 100%;
         max-width: none;
-    }
-
-    #gallery .photo-thumb {
-        margin-bottom: 10px;
     }
 
     .registration {
@@ -538,6 +548,7 @@ footer a {
 
     #gallery .photo-thumb {
         width: 280px;
+        height: 280px;
         margin-bottom: 10px;
     }
 

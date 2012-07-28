@@ -49,42 +49,18 @@
 
                     <div class="ten mobile-three columns">
 
-                        <label for="checkbox1" class="checkbox">
-                           <input type="checkbox" name="tags" id="checkbox1" style="display: none;">
-                            <span class="custom checkbox"></span> Wedding
+                        {% for tag in tags %}
+                        <label for="checkbox{{ forloop.counter }}" class="checkbox">
+                           <input type="checkbox" name="tags" id="checkbox{{ forloop.counter }}" style="display: none;">
+                            <span class="custom checkbox"></span> {{ tag }}
+                        </label>
+                        {% endfor %}
+
+                        <label for="checkboxother" class="checkbox">
+                            <input type="checkbox" name="tags" id="checkboxother" style="display: none;">
+                            <span class="custom checkbox"></span> Other
                         </label>
 
-                        <label for="checkbox2" class="checkbox">
-                            <input type="checkbox" name="tags" id="checkbox2" style="display: none;">
-                            <span class="custom checkbox"></span> Fashion
-                        </label>
-
-                        <label for="checkbox3" class="checkbox">
-                            <input type="checkbox" name="tags" id="checkbox3" style="display: none;">
-                            <span class="custom checkbox"></span> People
-                        </label>
-
-                        <label for="checkbox4" class="checkbox">
-                           <input type="checkbox" name="tags" id="checkbox4" style="display: none;">
-                            <span class="custom checkbox"></span> Family
-                        </label>
-
-                        <div class="clear"></div>
-
-                        <label for="checkbox5" class="checkbox">
-                            <input type="checkbox" name="tags" id="checkbox5" style="display: none;">
-                            <span class="custom checkbox"></span> Concert
-                        </label>
-
-                        <label for="checkbox6" class="checkbox">
-                            <input type="checkbox" name="tags" id="checkbox6" style="display: none;">
-                            <span class="custom checkbox"></span> Journalism
-                        </label>
-
-                        <label for="checkbox7" class="checkbox">
-                            <input type="checkbox" name="tags" id="checkbox7" style="display: none;">
-                            <span class="custom checkbox"></span> Food
-                        </label>
                     </div>
                     <center>
                         <input type="submit" name="submit" value="Save Changes" class="button" id="savechanges"/>

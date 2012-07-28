@@ -1,0 +1,6 @@
+You've received a new message on Lightning from a potential client!
+
+{{ name }} wants help with {{ tags|join:", " }} on {{ date|date:"DATE_FORMAT" }}, and added this message:
+
+{{ message }}
+

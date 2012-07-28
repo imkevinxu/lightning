@@ -1,11 +1,12 @@
 from lightning_app.models import *
 from django.contrib import admin
 
+from django.conf import settings
 from django.template.loader import get_template
 from django.template import Context
 from django.core.mail import send_mass_mail
 
-bodyTemplate = get_template('email.txt')
+bodyTemplate = get_template('email/invite.txt')
 
 class UserProfileAdmin(admin.ModelAdmin):
     list_display = ('user', 'fullname', 'location', 'fhp_id', 'is_invited')
@@ -29,7 +30,7 @@ class UserProfileAdmin(admin.ModelAdmin):
             body = bodyTemplate.render(context)
 
             if len(user.user.email) > 0:
-                messages.append((subject, body, 'me@wylie.su', [user.user.email]))
+                messages.append((subject, body, settings.SENDGRID_FROM, [user.user.email]))
 
         print messages
 
