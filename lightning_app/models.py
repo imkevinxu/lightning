@@ -105,6 +105,23 @@ class UserProfile(Base):
 
         return photographer
 
+    # sets user.tags to be a list of tag names
+    def getTags(self):
+        # tags = []
+
+        # for tag in Tag.objects.all():
+        #     for u in tag.user.all():
+        #         if u.id == self.id:
+        #             tags.append(tag.tagname)
+        
+        self.tags = []
+
+        tags = self.tag_set.all()
+        for tag in tags:
+            self.tags.append(tag.tagname)
+
+        return self
+
 class Photo(models.Model):
     user = models.ForeignKey(UserProfile)
 
@@ -180,4 +197,17 @@ class Tag(models.Model):
     
     def __unicode__(self):
         return self.tagname
+
+    # list of all tag names
+    @staticmethod
+    def getAllNames():
+        tags = []
+
+        for tag in Tag.objects.all():
+            tags.append(tag.tagname)
+
+        # TODO: consider other sorting, other than alphabetical?
+        tags.sort()
+
+        return tags
 

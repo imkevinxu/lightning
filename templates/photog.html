@@ -63,9 +63,9 @@
                 <div class="profile_info">
                     <h3 id="name"><a href="http://500px.com/{{ user.fhp_username }}" target="_blank">{{ user.fullname }}</a></h3>
 
-                    {% if tags %}
+                    {% if user.tags %}
                         <span class="info">Specializes in
-                            {% for tag in tags %}
+                            {% for tag in user.tags %}
                                 <span class="tag">{{ tag }}</span>{% if not forloop.last %}, {% endif %}
                             {% endfor %}
                         </span>
@@ -118,7 +118,7 @@
 
             <label class="inline">Type of photos:</label>
 
-            {% for tag in tags %}
+            {% for tag in user.tags %}
             <label for="checkbox{{ forloop.counter }}" class="checkbox">
                <input type="checkbox" name="tags" id="checkbox{{ forloop.counter }}" style="display: none;">
                 <span class="custom checkbox"></span> {{ tag }}
