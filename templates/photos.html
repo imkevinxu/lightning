@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+<!-- Copy and Paste this for every html file. -->
+{% block title %}Registration | Lightning{% endblock %}
+{% block meta_description %}{% endblock %}
+
+{% block extra_head %}
+<style type="text/css">
+@font-face {
+  font-family: 'FoundationIconsGeneral';
+  src: url('{{ STATIC_URL }}fonts/foundation-icons-general.eot');
+  src: url('{{ STATIC_URL }}fonts/foundation-icons-general.eot?#iefix') format('embedded-opentype'),
+       url('{{ STATIC_URL }}fonts/foundation-icons-general.woff') format('woff'),
+       url('{{ STATIC_URL }}fonts/foundation-icons-general.ttf') format('truetype'),
+       url('{{ STATIC_URL }}fonts/foundation-icons-general.svg#FoundationIconsGeneral') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+</style>
+<link rel="stylesheet" href="{{ STATIC_URL }}css/photos.css" />
+{% endblock %}
+
+{% block content %}
+    
+    <div class="registration reg2">
+
+        <h2>Pick your best 20 images for clients</h2>
+
+        <ul id="photos">
+        {% for photo in photos %}
+            <li class="photo {% if photo.is_chosen %}active{% endif %}" data-photo-id="{{ photo.id }}">
+                <img src="{{ photo.image_url }}" />
+                <a href="#" class="glyph">{% if photo.is_chosen %}f{% else %}g{% endif %}</a>
+            </li>
+        {% endfor %}
+
+            <div class="clear"></div>
+        </ul>
+
+        <form action="{% url photos %}" method="post" id="photos-form">{% csrf_token %}
+            <input type="submit" class="button" value="Save" />
+        </form>
+
+    </div>
+
+{% endblock %}
+
+{% block javascript %}
+<script src="{{ STATIC_URL }}js/photos.js"></script>
+{% endblock %}

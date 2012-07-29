@@ -1,0 +1,37 @@
+/* CSS to style glyphs */
+.glyph {
+    font-family: "FoundationIconsGeneral";
+}
+
+#photos {
+    list-style-type: none;
+}
+.photo {
+    position: relative;
+    float: left;
+
+    width: 280px;
+    height: 280px;
+    
+    cursor: pointer;
+}
+.photo .glyph {
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.4);
+
+    background: #fff;
+    text-align: center;
+    color: #999;
+}
+
+.active .glyph {
+    background: #2ba6cb; /* default link color */
+    color: #fff;
+}

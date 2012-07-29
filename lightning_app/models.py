@@ -32,10 +32,10 @@ class UserProfile(Base):
     fhp_about           = models.TextField(blank=True, null=True)
     fhp_domain          = models.URLField(blank=True, null=True)
     website             = models.URLField(blank=True, null=True)
-    twitter             = models.URLField(blank=True, null=True)
-    facebookpage        = models.URLField(blank=True, null=True)
-    flickr              = models.URLField(blank=True, null=True)
-    facebook            = models.URLField(blank=True, null=True)
+    twitter             = models.CharField(max_length=255, blank=True, null=True)
+    facebookpage        = models.CharField(max_length=255, blank=True, null=True)
+    flickr              = models.CharField(max_length=255, blank=True, null=True)
+    facebook            = models.CharField(max_length=255, blank=True, null=True)
     fhp_affection       = models.IntegerField(blank=True, null=True)
     fhp_photos_count    = models.IntegerField(blank=True, null=True)
     profilepic          = models.URLField(blank=True, null=True)
@@ -120,6 +120,8 @@ class Photo(models.Model):
 
     photo_id            = models.IntegerField()
     name                = models.CharField(max_length=255)
+
+    is_chosen           = models.BooleanField(default=False)
 
     description         = models.TextField(blank=True, null=True)
     times_viewed        = models.IntegerField(blank=True, null=True)

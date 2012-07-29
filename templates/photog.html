@@ -39,7 +39,7 @@
 
 <div class="portfolio-container">
     <div class="portfolio">
-        <ul>        
+        <ul>
             {% for photo in photos|slice:":15" %}
                 <li><img src="{{ photo.image_url }}" class="hero_photo"/></li>
             {% endfor %}

@@ -39,7 +39,7 @@ class UserProfileAdmin(admin.ModelAdmin):
     invite.short_description = "Invite user"
 
 class PhotoAdmin(admin.ModelAdmin):
-    list_display = ('name', 'photo_id', 'user', 'rating', 'times_viewed', 'votes_count', 'favorites_count', 'comments_count')
+    list_display = ('id', 'name', 'is_chosen', 'photo_id', 'user', 'rating', 'times_viewed', 'votes_count', 'favorites_count', 'comments_count')
     list_filter = ('created_at',)
     ordering = ['-created_at']
     search_fields = ['name', 'photo_id']
