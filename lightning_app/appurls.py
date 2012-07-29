@@ -12,11 +12,11 @@ urlpatterns = patterns('lightning_app.views',
     url(r'^login_redirect/$', 'login_redirect', name='login_redirect'),
 
     url(r'^register/$', 'register', name='register'),
-    url(r'^reg2/$', 'reg2', name='reg2'),
+    url(r'^reg2/$', 'reg2', name='account'),
     url(r'^reg3/$', 'reg3', name='reg3'),
 
     url(r'^users/(.*)/$', 'users'),
     
-    url(r'^(.*)/$', 'show')
+    url(r'^(.*)/$', 'show', name='show')
 
 )

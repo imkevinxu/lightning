@@ -107,13 +107,6 @@ class UserProfile(Base):
 
     # sets user.tags to be a list of tag names
     def getTags(self):
-        # tags = []
-
-        # for tag in Tag.objects.all():
-        #     for u in tag.user.all():
-        #         if u.id == self.id:
-        #             tags.append(tag.tagname)
-        
         self.tags = []
 
         tags = self.tag_set.all()

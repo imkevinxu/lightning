@@ -56,7 +56,11 @@
                 </div>
                 <div class="clear"></div>
 
-                <a href="#booking" name="modal" class="success button" data-reveal-id="contact-modal" id="contact-button">Contact Me</a>
+                {% if isSelf %}
+                    <a href="{% url account %}" class="button" id="contact-button">Edit profile</a>
+                {% else %}
+                    <a href="#booking" name="modal" class="success button" data-reveal-id="contact-modal" id="contact-button">Contact Me</a>
+                {% endif %}
             </div>
 
             <div class="nine columns offset-by-one">

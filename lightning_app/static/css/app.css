@@ -245,9 +245,7 @@ label.checkbox:hover span.checkbox {
 
 .registration {
     margin-top: 50px !important;
-    padding: 40px;
     padding-bottom: 80px;
-    background-color: rgba(0, 0, 0, 0.80);
 }
 
 .registration.reg2 {
@@ -395,11 +393,6 @@ label.checkbox:hover span.checkbox {
     content: "Join as a photographer";
 }
 
-#registration {
-    background: url("http://s3.amazonaws.com/lightning-app/images/login.jpg") no-repeat center 0 fixed;
-    height: 100%;
-}
-
 #main {
     padding-bottom: 45px;
 }
@@ -495,10 +488,6 @@ footer a {
     .registration #reg1 input {
         line-height: 26px;
         font-size: 20px;
-    }
-
-    body#registration {
-        background: url("http://s3.amazonaws.com/lightning-app/images/login.jpg") no-repeat center center fixed;
     }
 
     .portfolio-container {

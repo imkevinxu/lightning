@@ -11,14 +11,14 @@
 
 <div class="row">
     <div class="registration seven columns mobile-four centered">
-        <h1 class="white">Apply as a photographer</h1>
+        <h1>Apply as a photographer</h1>
 
         <form action="{% url register %}" method="post" id="reg1">{% csrf_token %} 
             <input type="text" name="username" placeholder="Username"/>
             <input type="email" name="email" placeholder="Email address"/>
             <input type="password" name="password" placeholder="Password"/>
 
-            <label class="white" for="email">Enter your 500px username or email address:</label>
+            <label for="email">Enter your 500px username or email address:</label>
             <input type="text" name="account" id="email" placeholder="500px Username or Email Address"/>
 
             <center>

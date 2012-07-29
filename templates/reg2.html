@@ -11,7 +11,7 @@
 
     <div class="registration reg2">
         <h1>Thanks for signing up {{ photographer.fullname }}</h1>
-        <form action="{% url reg3 %}" method="post" id="reg2" class="custom">{% csrf_token %}
+        <form action="{% url account %}" method="post" id="reg2" class="custom">{% csrf_token %}
             <div class="row">
                 <div class="eight columns">
 
@@ -51,7 +51,7 @@
 
                         {% for tag in tags %}
                         <label for="checkbox{{ forloop.counter }}" class="checkbox">
-                           <input type="checkbox" name="tags" id="checkbox{{ forloop.counter }}" style="display: none;">
+                           <input type="checkbox" name="tags" id="checkbox{{ forloop.counter }}" style="display: none;" {% if tag in photographer.tags %}checked="checked"{% endif %}>
                             <span class="custom checkbox"></span> {{ tag }}
                         </label>
                         {% endfor %}
