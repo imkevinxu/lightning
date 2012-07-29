@@ -51,15 +51,10 @@
 
                         {% for tag in tags %}
                         <label for="checkbox{{ forloop.counter }}" class="checkbox">
-                           <input type="checkbox" name="tags" id="checkbox{{ forloop.counter }}" style="display: none;" {% if tag in photographer.tags %}checked="checked"{% endif %}>
+                           <input type="checkbox" name="tags" id="checkbox{{ forloop.counter }}" style="display: none;" value="{{ tag }}" {% if tag in photographer.tags %}checked="checked"{% endif %}>
                             <span class="custom checkbox"></span> {{ tag }}
                         </label>
                         {% endfor %}
-
-                        <label for="checkboxother" class="checkbox">
-                            <input type="checkbox" name="tags" id="checkboxother" style="display: none;">
-                            <span class="custom checkbox"></span> Other
-                        </label>
 
                     </div>
                     <center>
