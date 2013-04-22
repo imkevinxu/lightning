@@ -4,3 +4,4 @@
 .DS_Store
 lightning/db.sql
 /static
+lightning/settings_private.py
